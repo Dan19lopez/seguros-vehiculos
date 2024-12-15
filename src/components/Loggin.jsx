@@ -12,7 +12,7 @@ function Loggin() {
   return (
     <div >
 
-      <button className="btn btn2" onClick={handleClick} >Registrarse</button>
+      <button className="btn btn2" onClick={handleClick} >¿No tienes una cuenta con nosotros? Regístrate aquí</button>
 
     </div>
   );

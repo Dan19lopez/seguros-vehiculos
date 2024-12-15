@@ -5,7 +5,7 @@ import "./SingIIn.css"
 
 function SingIIn() {
   return (
-    <div className="signin-page">
+    <div className="signiin-page">
       <FormularioDos />
       <SingIn className = "espalda" />
       
