@@ -21,7 +21,6 @@ const Home = () => {
         <div className="hero-overlay">
           <h1>¡Asegura tu auto!</h1>
           <p>Protege tu vehículo con  Colmenar, porque tu tranquilidad es nuestra prioridad.</p>
-          <button className="cta-button">Descubre más</button>
         </div>
       </section>
 
