@@ -95,7 +95,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
 }
 
-/* ubicacion componente ============Start-sotp boton ======================================*/
+/* ubicacion componente ============Start-sotp boton solo se ubica desde singiin.css==================*/
 
 .button-container{
   position: absolute;

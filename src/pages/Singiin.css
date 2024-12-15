@@ -112,7 +112,7 @@
     /* Borde para realzar el efecto de vidrio */
   }
 
-
+/* ubicacion componente ============Start-sotp boton solo se ubica desde este componente==================*/
 
   .button-container {
     position: absolute;
@@ -120,6 +120,8 @@
     left: 175px;
 
   }
+
+/*========================================================================================================*/
 
   .input {
     width: 100%;
