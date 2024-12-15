@@ -16,7 +16,7 @@ body {
   
   /* Barra Superior */
   .header {
-    display: flex;
+    display:inline-flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -136,7 +136,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
-    background-color:#4ab4c9;
+    background-color:var(--color-4);
   }
   
   .plan-button {
