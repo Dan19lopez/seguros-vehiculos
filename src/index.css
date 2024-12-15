@@ -1,13 +1,13 @@
 /* Global Styles */
 :root {
   /*Colores del proyecto*/
-  --color-1: #184160;
+  --color-1: #FFFFFF;
   --color-2: #808FA1;
-  --color-3: #3A93CA;
-  --color-4: #21699A;
-  --color-5: #64BFE4;
-  --color-6: #547F9E;
-  --color-7: #FFFFFF;
+  --color-3: #547F9E;
+  --color-4: #64BFE4;
+  --color-5: #3A93CA;
+  --color-6: #21699A;
+  --color-7: #184160;
   --color-8: #000000;
   /*Fuentes del proyecto*/
   --fuente-principal: Arial, sans-serif;
