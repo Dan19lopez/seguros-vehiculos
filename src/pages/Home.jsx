@@ -1,8 +1,15 @@
 import React from "react";
 import "./Home.css";
 import SeccionTarjetas from "../components/SeccionTarjetas";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+
+let redireccion = useNavigate();
+const handleClick =()=>{
+  redireccion("/login")
+}
+
   return (
     <div className="home-container">
       {/* Barra Superior */}
@@ -12,7 +19,7 @@ const Home = () => {
         </div>
         <nav className="nav">
           <span className="nav-title">COLMENAR</span>
-          <button  type="button" className="login-button">Iniciar Sesión</button>
+          <button  type="button" className="login-button" onClick={handleClick}>Iniciar Sesión</button>
         </nav>
       </header>
 
