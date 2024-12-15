@@ -2,6 +2,23 @@ import React from 'react';
 import './StarEngine.css';
 
 function StartStopButton() {
+
+  /* inicio logica*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*termina logica*/
+
   return (
 
     

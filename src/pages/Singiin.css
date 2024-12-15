@@ -1,36 +1,44 @@
   /**{border: red solid 1px;}*/
-  
+
   .signiin-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100% del alto de la ventana */
-    width: 100vw; /* 100% del ancho de la ventana */
+    height: 100vh;
+    /* 100% del alto de la ventana */
+    width: 100vw;
+    /* 100% del ancho de la ventana */
     /*background-image: url('../img/fondocarretera.jpg');*/
     background-color: var(--color-7);
-    background-size: cover; /* Asegúrate de que cubra toda el área */
+    background-size: cover;
+    /* Asegúrate de que cubra toda el área */
     background-position: center;
     gap: 0px;
   }
 
-.titulo{
-    color:var(--color-1);
+  .titulo {
+    color: var(--color-1);
     font-size: 1.8rem;
 
   }
 
-  .parrafo{
+  .parrafo {
     color: var(--color-8);
     font-size: medium;
-    position: absolute; /* Lo posiciona con respecto a su contenedor padre */
-    top: 15%; /* Lo coloca en la parte superior */
-    left: 50%; /* Lo centra horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centrar completamente */
-    text-align: center; /* Centra el texto */
+    position: absolute;
+    /* Lo posiciona con respecto a su contenedor padre */
+    top: 15%;
+    /* Lo coloca en la parte superior */
+    left: 50%;
+    /* Lo centra horizontalmente */
+    transform: translateX(-50%);
+    /* Ajuste para centrar completamente */
+    text-align: center;
+    /* Centra el texto */
     font-weight: bold;
   }
-    
+
   .formularioDos {
     width: 1080px;
     height: 700px;
@@ -42,7 +50,7 @@
     text-align: center;
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
   }
-  
+
   .formularioDos {
     background-color: var(--color-1);
     background-image: url('../img/newlogin.jpg');
@@ -53,55 +61,66 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    
+
   }
-  
+
   .btn2 {
-    background: none !important; /* Elimina el fondo */
+    background: none !important;
+    /* Elimina el fondo */
     border: none !important;
     padding: 0;
-    color: var(--color-1); /* Color del texto */
-    font-size: 16px; /* Tamaño del texto */
-    text-decoration: underline; /* Subrayado, si quieres que parezca un enlace */
-    cursor: pointer; /* Cambia el cursor a "mano" al pasar por encima */
+    color: var(--color-1);
+    /* Color del texto */
+    font-size: 16px;
+    /* Tamaño del texto */
+    text-decoration: underline;
+    /* Subrayado, si quieres que parezca un enlace */
+    cursor: pointer;
+    /* Cambia el cursor a "mano" al pasar por encima */
     margin-bottom: 0px;
     position: relative;
     top: -70px;
-}
+  }
 
-.btn2:hover {
-    color: var(--color-8) ; /* Color más oscuro al pasar el mouse */
-}
-  
-  
-.formDos {
-  
-  width: 80%;
-  max-width: 350px;
-  height: 200px;
-  position: absolute;
-  top: 170px;
-  background-color: var(--color-1);
-  padding: 30px;
-  margin-right: 50px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
-  backdrop-filter: blur(5px); /* Desenfoque del fondo detrás */
-  -webkit-backdrop-filter: blur(25px); /* Para compatibilidad con navegadores WebKit */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
-}
-  
-  
-  
-  .button-container{
+  .btn2:hover {
+    color: var(--color-8);
+    /* Color más oscuro al pasar el mouse */
+  }
+
+
+  .formDos {
+
+    width: 80%;
+    max-width: 350px;
+    height: 200px;
+    position: absolute;
+    top: 170px;
+    background-color: var(--color-1);
+    padding: 30px;
+    margin-right: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    /* Fondo semitransparente */
+    backdrop-filter: blur(5px);
+    /* Desenfoque del fondo detrás */
+    -webkit-backdrop-filter: blur(25px);
+    /* Para compatibilidad con navegadores WebKit */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Borde para realzar el efecto de vidrio */
+  }
+
+
+
+  .button-container {
     position: absolute;
     top: 325px;
     left: 175px;
-  
+
   }
-  
+
   .input {
     width: 100%;
     padding: 12px;
@@ -111,13 +130,13 @@
     border-radius: 4px;
     transition: border-color 0.3s;
   }
-  
+
   .input:focus {
     border-color: var(--color-1);
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
-  
+
   .btn {
     padding: 10px 20px;
     margin: 10px;
@@ -127,19 +146,24 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
   .btn:hover {
     background-color: var(--color-4);
   }
-  
+
   /* nota especial, no se porque pero esta hoja afecta tanto a las Singiin como a la login, 
   no encuentro logica, posiblemente por temas de cookies*/
-  
+
+
+
+  /*========================================================================================================*/
+  /*RESPONSIVE*/
+
   /* Responsividad para dispositivos pequeños */
   @media (max-width: 768px) {
     .login-page {
       flex-direction: column;
-      /* Los divs se apilan verticalmente */
+
     }
-  
+
   }

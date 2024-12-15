@@ -4,12 +4,29 @@ import SingIn from "../components/SingIn";
 import "./SingIIn.css"
 
 function SingIIn() {
+
+  /* inicio logica*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*termina logica*/
+
   return (
     <div className="signiin-page">
       <h3 className="titulo">Crea una cuenta</h3>
       <FormularioDos />
-      <SingIn className = "espalda" />
-      
+      <SingIn className="espalda" />
+
     </div>
   );
 }
