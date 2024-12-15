@@ -7,7 +7,7 @@ function SingIIn() {
   return (
     <div className="signin-page">
       <FormularioDos />
-      <SingIn className = "espaldaDos" />
+      <SingIn className = "espalda" />
       
     </div>
   );
