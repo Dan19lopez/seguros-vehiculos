@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import SignUpForm from "../components/SignUpForm";
-import "../components/LoginForm.css";
+/*import React from "react";
+/*import { Link } from "react-router-dom";
+/*/import SignUpForm from "../components/SignUpForm";
+/*import "../components/LoginForm.css";*/
 
-function SignUpPage() {
+/*function SignUpPage() {
   return (
     <div className="page-container">
       <div className="box">
@@ -20,4 +20,4 @@ function SignUpPage() {
   );
 };
 
-export default SignUpPage;
+export default SignUpPage;*/

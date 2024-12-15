@@ -1,4 +1,4 @@
-import "./LoginSignin.css";
+
 import { useState } from "react";
 
 function LoginSignintransicion() {
