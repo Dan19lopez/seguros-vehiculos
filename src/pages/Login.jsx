@@ -9,7 +9,8 @@ function Login() {
   
   return (
     <div className="login-page">
-      <Formulario className ="formulario" />
+      <h3 className="titulo">Ingresa a tu cuenta</h3>
+            <Formulario className ="formulario" />
       
       <Loggin className = "espalda"/>
 

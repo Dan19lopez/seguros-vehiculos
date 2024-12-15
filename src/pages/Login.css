@@ -18,6 +18,23 @@
     gap: 0px;
   }
 
+  .titulo{
+    color:var(--color-1);
+    font-size: 1.8rem;
+
+  }
+
+  .parrafo{
+    color: var(--color-8);
+    font-size: medium;
+    position: absolute; /* Lo posiciona con respecto a su contenedor padre */
+    top: 15%; /* Lo coloca en la parte superior */
+    left: 50%; /* Lo centra horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centrar completamente */
+    text-align: center; /* Centra el texto */
+    font-weight: bold;
+  }
+
 
 .formulario{
   width: 1080px;
@@ -65,7 +82,7 @@
   max-width: 350px;
   height: 200px;
   position: absolute;
-  top: 70px;
+  top: 170px;
   background-color: var(--color-6);
   padding: 30px;
   margin-right: 50px;
@@ -82,7 +99,7 @@
 
 .button-container{
   position: absolute;
-  top: 150px;
+  top: 10px;
   left: 45px;
 
 }
@@ -90,7 +107,7 @@
 .inputA{
   width: 100%;
   padding-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-top: 30px;
   font-size: 16px;
   border: 1px solid var(--color-1);

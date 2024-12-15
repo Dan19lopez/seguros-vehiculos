@@ -11,7 +11,7 @@ const handleClick =()=>{
 
   return (
     <div>
-      <button className="btn btn2" onClick={handleClick} >Iniciar Sesión</button>
+      <button className="btn btn2" onClick={handleClick} >¿Tienes una cuenta? Inicia sesión aquí.</button>
     </div>
   );
 }
