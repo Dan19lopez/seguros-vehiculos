@@ -10,11 +10,10 @@ function Loggin() {
   }
 
   return (
-    <div >
+  
 
-      <button className="btn btn2" onClick={handleClick} >¿No tienes una cuenta con nosotros? Regístrate aquí</button>
+   <button className="btn btn2" onClick={handleClick} >¿No tienes una cuenta con nosotros? Regístrate aquí</button>
 
-    </div>
   );
 }
 export default Loggin;
