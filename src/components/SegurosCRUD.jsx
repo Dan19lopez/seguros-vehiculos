@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './SegurosCRUD.css';
+/*{import './SegurosCRUD.css';}*/
 
 const SegurosCRUD = () => {
   const [usuarios, setUsuarios] = useState([]);
