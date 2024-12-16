@@ -67,19 +67,6 @@ function Login() {
     };
 
     /*termina logica*/
-
-    return (
-      <div className="login-page">
-        <h3 className="titulo">Ingresa a tu cuenta</h3>
-        <Formulario className="formulario" />
-
-        <Loggin className="espalda" />
-
-
-      </div>
-    );
-  }
-  /*termina logica*/
   
   return (
     <div className="login-page">
@@ -108,5 +95,6 @@ function Login() {
   
     </div>
   );
+}
 }
 export default Login;
