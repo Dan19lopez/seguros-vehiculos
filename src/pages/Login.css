@@ -7,7 +7,7 @@ border: red solid 1px;
   display: flex;
     flex-direction: column;
     /*justify-content: center;*/
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width:100vw;
     height: 100vh; 
@@ -59,7 +59,7 @@ border: red solid 1px;
 .modalIniciarSesion{
   /*background-color: var(--color-7);*/
   /* background-color: var(--color-1);*/
-  background-image: url('../img/newlogin.png');
+  background-image: url('../img/nuevologinsinconsola.jpg');
   /*background-size: 725px 850px;*/
   background-repeat: no-repeat;
   background-position: center;
@@ -108,6 +108,7 @@ border: red solid 1px;
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
    z-index: 2;
+   border-radius: 12px;
 }
 
 /* ubicacion componente ============Start-sotp boton solo se ubica desde singiin.css==================*/
@@ -155,6 +156,7 @@ border: red solid 1px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
   z-index: 2;
+  border-radius: 12px;
   /*background-color: var(--color-3);*/
   /*color: var(--color-1);*/
  /* border: none;*/
@@ -181,7 +183,7 @@ border: red solid 1px;
 /*===============*/
 .containerHeader{
   width: 100%;
-  height: 15vh;
+  height: 0vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,7 +203,7 @@ border: red solid 1px;
   display: flex;
   flex-direction: row;
   width:100%;
-  height: 80vh;
+  height: 39vh;
   justify-content: space-around;
  /* outline: 3px solid rgb(0, 229, 255);*/
 }
