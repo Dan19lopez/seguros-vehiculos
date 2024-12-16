@@ -58,7 +58,7 @@ border: red solid 1px;
 .modalIniciarSesion{
   /*background-color: var(--color-7);*/
   /* background-color: var(--color-1);*/
-  background-image: url('../img/newlogin.jpg');
+  background-image: url('../img/newlogin.png');
   /*background-size: 725px 850px;*/
   background-repeat: no-repeat;
   background-position: center;
