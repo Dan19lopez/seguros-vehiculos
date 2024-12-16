@@ -1,13 +1,13 @@
 import React from "react";
 import "./Home.css";
+import SeccionTarjetas from "../components/SeccionTarjetas";
 import { useNavigate } from "react-router-dom";
-import VehiculosCRUD from "../components/VehiculosCRUD";
 
-const Home = () => {
+const Landing = () => {
 
 let redireccion = useNavigate();
 const handleClick =()=>{
-  redireccion("/Landing")
+  redireccion("/Login")
 }
 
   return (
@@ -18,7 +18,7 @@ const handleClick =()=>{
           <img src="/src/img/Logo.jpg" alt="Logo" className="logo-image" />
         </div>
         <nav className="nav">
-          <button  type="button" className="login-button" onClick={handleClick}>Cerrar Sesión</button>
+          <button  type="button" className="login-button" onClick={handleClick}>Iniciar Sesión</button>
         </nav>
       </header>
 
@@ -61,7 +61,7 @@ const handleClick =()=>{
         </div>
       </section>
     
-    <VehiculosCRUD/>
+    <SeccionTarjetas/>
 
 
       {/* Sección de Información */}
@@ -118,4 +118,4 @@ const handleClick =()=>{
   );
 };
 
-export default Home;
+export default Landing;

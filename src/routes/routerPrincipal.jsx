@@ -6,13 +6,14 @@ import SingIIn from "../pages/SingIIn";
 import LogAndSignIn from "../pages/LogAndSignIn";
 import SegurosPage from "../pages/SegurosPage";
 import VehiculosPage from "../pages/VehiculosPage";
+import Landing from "../pages/Landing";
 /*import LoginPage from "../pages/LoginPage";*/
 /*import SignUpPage from "../pages/SignUpPage";*/
 
 
 const RouterPrincipal = createBrowserRouter([
   {
-    path: "/",
+    path: "/Home",
     element: <Home />,
   },
   {
@@ -34,6 +35,11 @@ const RouterPrincipal = createBrowserRouter([
   {
     path: "/crudUsuario",
     element: <SegurosPage />,
+  },
+
+  {
+    path:"/",
+    element:<Landing />,
   }
   /*{
     path: "/inicio",

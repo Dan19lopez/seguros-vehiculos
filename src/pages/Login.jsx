@@ -43,7 +43,7 @@ function Login() {
         },
         willClose: () => {
           clearInterval(timerInterval);
-          redirection("/");
+          redirection("/Home");
         },
       });
 
