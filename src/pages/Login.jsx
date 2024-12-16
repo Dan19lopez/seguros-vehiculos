@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   /* inicio logica*/
 
-  const Login = () => {
+ /* const Login = () => {
     const [getCorreo, setCorreo] = useState("");
     const [getContrasena, setContrasena] = useState("");
     const [getCedula, setCedula] = useState("");
@@ -65,7 +65,7 @@ function Login() {
           });
         });
     };
-
+*/
     /*termina logica*/
   
   return (
@@ -96,5 +96,5 @@ function Login() {
     </div>
   );
 }
-}
+
 export default Login;
