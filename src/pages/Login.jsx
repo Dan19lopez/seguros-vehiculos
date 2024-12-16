@@ -75,13 +75,13 @@ function Login() {
     <div className="login-page">
 
       <div className="containerHeader">
-        <h3 className="">Ingresa a tu cuenta</h3>
+        <h3 className="tituloLogin">Ingresa a tu cuenta</h3>
       </div>
 
       <div className="modalIniciarSesion">
 
         <div className="arribaLogin">
-          <p className="">¿Aún no tienes cuenta? Regístrate hoy y accede a los mejores seguros para tu vehiculo.</p>
+          <p className="parrafoLogin">¿Aún no tienes cuenta? Regístrate hoy y accede a los mejores seguros para tu vehiculo.</p>
           <BotonCerrar />
         </div>
 

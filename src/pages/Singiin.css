@@ -116,8 +116,10 @@
 
   .button-container {
     position: absolute;
-    top: 325px;
-    left: 175px;
+    top: 258px;
+    left: 163px;
+   /* top: 325px;*/
+   /* left: 175px;*/
 
   }
 
