@@ -46,7 +46,7 @@ function Login() {
               },
               willClose: () => {
                 clearInterval(timerInterval);
-                redirection("/"); // Redirige al usuario
+                redirection("/loginSignin"); // Redirige al usuario
               },
             });
           } else {
