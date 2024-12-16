@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-
-
+import React, { useState, useEffect } from "react";
+import './SegurosCRUD.css';
 
 const SegurosCRUD = () => {
-    const [usuarios, setUsuarios] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
   const [formData, setFormData] = useState({
-    id: null,
+    id: "",
     nombre: "",
     correo: "",
     telefono: "",
@@ -18,6 +17,20 @@ const SegurosCRUD = () => {
   const [showModal, setShowModal] = useState(false);
   const [userToDelete, setUserToDelete] = useState(null);
 
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await fetch("http://localhost:7715/usuarios");
+        const data = await response.json();
+        setUsuarios(data);
+      } catch (error) {
+        console.error("Error al traer los usuarios:", error);
+      }
+    };
+
+    fetchUsuarios();
+  }, []);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -26,20 +39,43 @@ const SegurosCRUD = () => {
     });
   };
 
-  const handleAdd = (e) => {
+  const generateNewId = () => {
+    if (usuarios.length === 0) return 1;
+    return Math.max(...usuarios.map((usuario) => usuario.id)) + 1;
+  };
+
+  const handleAdd = async (e) => {
     e.preventDefault();
-    const newUser = { ...formData, id: Date.now() };
-    setUsuarios([...usuarios, newUser]);
-    setFormData({
-      id: null,
-      nombre: "",
-      correo: "",
-      telefono: "",
-      cedula: "",
-      contrasena: "",
-      fecha_nacimiento: "",
-      activo: 0,
-    });
+    const newUser = { ...formData, id: generateNewId() };
+
+    try {
+      const response = await fetch("http://localhost:7715/usuarios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newUser)
+      });
+
+      if (response.ok) {
+        const createdUser = await response.json();
+        setUsuarios([...usuarios, createdUser]);
+        setFormData({
+          id: "",
+          nombre: "",
+          correo: "",
+          telefono: "",
+          cedula: "",
+          contrasena: "",
+          fecha_nacimiento: "",
+          activo: 0,
+        });
+      } else {
+        console.error("Error al crear el usuario:", response.status);
+      }
+    } catch (error) {
+      console.error("Error al realizar la solicitud:", error);
+    }
   };
 
   const handleEdit = (usuario) => {
@@ -53,7 +89,7 @@ const SegurosCRUD = () => {
       usuarios.map((usuario) => (usuario.id === formData.id ? formData : usuario))
     );
     setFormData({
-      id: null,
+      id: "",
       nombre: "",
       correo: "",
       telefono: "",
@@ -189,6 +225,5 @@ const SegurosCRUD = () => {
     </div>
   );
 };
-  
 
 export default SegurosCRUD;
