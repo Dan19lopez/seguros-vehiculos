@@ -28,13 +28,13 @@ const RouterPrincipal = createBrowserRouter([
     element: <LogAndSignIn />,
   },
   {
-    path: "/crudUsuario",
-    element: <SegurosPage/>,
-  },
-  {
     path: "/crudVehiculo",
     element: <VehiculosPage />,
   },
+  {
+    path: "/crudUsuario",
+    element: <SegurosPage />,
+  }
   /*{
     path: "/inicio",
     element: <LoginPage />,
