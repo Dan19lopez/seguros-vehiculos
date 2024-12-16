@@ -21,8 +21,8 @@ function StartStopButton() {
 
   return (
 
-    
-    <div className="button-container">
+    <div className="consola">
+       <div className="button-container">
       <div className="start-stop-button">
         
       <button type="submit" className='botonEngine'>
@@ -36,6 +36,8 @@ function StartStopButton() {
         </button>
       </div>
     </div>
+    </div>
+   
     
   );
 }
