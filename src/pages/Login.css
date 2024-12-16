@@ -7,7 +7,7 @@ border: red solid 1px;
   display: flex;
     flex-direction: column;
     /*justify-content: center;*/
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width:100vw;
     height: 100vh; 
@@ -20,19 +20,19 @@ border: red solid 1px;
     /*gap: 0px;*/
   }
 
-  .titulo{
+  .tituloLogin{
     color:var(--color-1);
     font-size: 1.8rem;
 
   }
 
-  .parrafo{
+  .parrafoLogin{
     color: var(--color-8);
     font-size: medium;
-    position: absolute; /* Lo posiciona con respecto a su contenedor padre */
-    top: 15%; /* Lo coloca en la parte superior */
-    left: 50%; /* Lo centra horizontalmente */
-    transform: translateX(-50%); /* Ajuste para centrar completamente */
+    /*position: absolute; Lo posiciona con respecto a su contenedor padre */
+    /*top: 15%;  Lo coloca en la parte superior */
+    /*left: 50%;  Lo centra horizontalmente */
+    /*transform: translateX(-50%); /* Ajuste para centrar completamente */
     text-align: center; /* Centra el texto */
     font-weight: bold;
   }
@@ -52,13 +52,14 @@ border: red solid 1px;
   align-items: center;
   text-align: center;
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
+  z-index: 0;
 
 }
 
 .modalIniciarSesion{
   /*background-color: var(--color-7);*/
   /* background-color: var(--color-1);*/
-  background-image: url('../img/newlogin.png');
+  background-image: url('../img/nuevologinsinconsola.jpg');
   /*background-size: 725px 850px;*/
   background-repeat: no-repeat;
   background-position: center;
@@ -69,7 +70,7 @@ border: red solid 1px;
 }
 
 
-.btn2 {
+.btn2Login {
   background: none !important; /* Elimina el fondo */
   border: none !important;
  /* padding: 0;*/
@@ -96,12 +97,18 @@ border: red solid 1px;
   margin-right:10%;
   margin-left:10%;
   border-radius: 8px;
- /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-  background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
-  backdrop-filter: blur(5px); /* Desenfoque del fondo detrás */
-  -webkit-backdrop-filter: blur(25px); /* Para compatibilidad con navegadores WebKit */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
+
+}
+
+.formulario{
+   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+   background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+   backdrop-filter: blur(5px); /* Desenfoque del fondo detrás */
+   -webkit-backdrop-filter: blur(25px); /* Para compatibilidad con navegadores WebKit */
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
+   z-index: 2;
+   border-radius: 12px;
 }
 
 /* ubicacion componente ============Start-sotp boton solo se ubica desde singiin.css==================*/
@@ -138,9 +145,18 @@ border: red solid 1px;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.btn {
+.btnLogin {
   padding: 10px 20px;
   margin: 10px;
+  z-index: 2;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+  background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+  backdrop-filter: blur(5px); /* Desenfoque del fondo detrás */
+  -webkit-backdrop-filter: blur(25px); /* Para compatibilidad con navegadores WebKit */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
+  z-index: 2;
+  border-radius: 12px;
   /*background-color: var(--color-3);*/
   /*color: var(--color-1);*/
  /* border: none;*/
@@ -167,7 +183,7 @@ border: red solid 1px;
 /*===============*/
 .containerHeader{
   width: 100%;
-  height: 15vh;
+  height: 0vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,7 +203,7 @@ border: red solid 1px;
   display: flex;
   flex-direction: row;
   width:100%;
-  height: 80vh;
+  height: 39vh;
   justify-content: space-around;
  /* outline: 3px solid rgb(0, 229, 255);*/
 }
