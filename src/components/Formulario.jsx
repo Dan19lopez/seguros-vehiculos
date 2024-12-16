@@ -1,18 +1,35 @@
-import "../pages/Login.css"
+import "../pages/Login.css";
 import StartStopButton from "./StarEngine";
 
+function Formulario({ setCorreo, setContrasena, handlerEnviar }) {
 
-function Formulario() {
   return (
     <div className="formulario">
-      {/* <p className="parrafo">¿Aún no tienes cuenta? Regístrate hoy y accede a los mejores seguros para tu vehiculo.</p>*/}
-      <form action="" className="formLogin">
-        {/*<label htmlFor="Usuario">Usuario</label>*/}
-        <input type="text" placeholder="Usuario" className="inputA" />
-        <input type="password" placeholder="Contraseña" className="inputA" />
-        <StartStopButton />
+      <form className="formLogin" onSubmit={(e) => e.preventDefault()}>
+        <div className="contenidoInput">
+          <label htmlFor="usuario">Usuario</label>
+          <input
+            type="text"
+            id="usuario"
+            placeholder="Usuario"
+            className="inputA"
+            onChange={(e) => setCorreo(e.target.value)} // Actualiza el estado del correo
+          />
+        </div>
+        <div className="contenidoInput">
+          <label htmlFor="contrasena">Contraseña</label>
+          <input
+            type="password"
+            id="contrasena"
+            placeholder="Contraseña"
+            className="inputA"
+            onChange={(e) => setContrasena(e.target.value)} // Actualiza el estado de la contraseña
+          />
+        </div>
+        <StartStopButton onClick={handlerEnviar}/>
       </form>
     </div>
   );
 }
+
 export default Formulario;

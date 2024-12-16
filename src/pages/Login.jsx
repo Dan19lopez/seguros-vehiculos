@@ -1,6 +1,6 @@
 
 import BotonCerrar from "../components/BotonCerrar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Formulario from "../components/Formulario";
 import Loggin from "../components/Loggin";
 import "./Login.css"
@@ -10,67 +10,53 @@ import Swal from "sweetalert2";
 function Login() {
   /* inicio logica*/
 
-  const loginlogic = () => {
-    const [getCorreo, setCorreo] = useState("");
-    const [getContrasena, setContrasena] = useState("");
-    const [getCedula, setCedula] = useState("");
-    const [getUsuarios, setUsuarios] = useState([]);
-    let redirection = useNavigate();
+  const [getCorreo, setCorreo] = useState("");
+  const [getContrasena, setContrasena] = useState("");
+  const [getCedula, setCedula] = useState("");
+  const [getUsuarios, setUsuarios] = useState([]);
+  let redirection = useNavigate();
 
-    const handleLogin = () => {
-      fetch("http://localhost:7715/usuarios")
-        .then((response) => response.json())
-        .then((data) => {
-          setUsuarios(data);
+  function iniciarSesion() {
+    fetch("http://localhost:7715/usuarios")
+      .then((response) => response.json())
+      .then((data) => setUsuarios(data));
 
-          const autenticar = getUsuarios.some(
-            (usuario) =>
-              (usuario.contrasena === getContrasena && usuario.correo === getCorreo) ||
-              (usuario.cedula === getCedula && usuario.contrasena === getContrasena)
-          );
+    const autenticar = getUsuarios.some(
+      (usuario) =>
+      ((usuario.contrasena == getContrasena && (usuario.correo == getCorreo ||usuario.cedula == getCedula))
+    ));
 
-          if (autenticar) {
-            let timerInterval;
-            Swal.fire({
-              title: "¡Inicio de sesión exitoso!",
-              html: "Redirigiendo en <b></b> milisegundos.",
-              timer: 2000,
-              timerProgressBar: true,
-              icon: "success",
-              didOpen: () => {
-                Swal.showLoading();
-                const timer = Swal.getPopup().querySelector("b");
-                timerInterval = setInterval(() => {
-                  timer.textContent = Swal.getTimerLeft();
-                }, 100);
-              },
-              willClose: () => {
-                clearInterval(timerInterval);
-                redirection("/loginSignin"); // Redirige al usuario
-              },
-            });
-          } else {
-            Swal.fire({
-              title: "Error",
-              text: "Credenciales incorrectas. Inténtalo de nuevo.",
-              icon: "error",
-            });
-          }
-        })
-        .catch((error) => {
-          console.error("Error al obtener usuarios:", error);
-          Swal.fire({
-            title: "Error",
-            text: "No se pudo conectar con el servidor.",
-            icon: "error",
-          });
-        });
-    };
+    if (autenticar) {
+      let timerInterval;
+      Swal.fire({
+        title: "Auto close alert!",
+        html: "I will close in <b></b> milliseconds.",
+        timer: 2000,
+        timerProgressBar: true,
+        icon: "success",
+        didOpen: () => {
+          Swal.showLoading();
+          const timer = Swal.getPopup().querySelector("b");
+          timerInterval = setInterval(() => {
+            timer.textContent = `${Swal.getTimerLeft()}`;
+          }, 100);
+        },
+        willClose: () => {
+          clearInterval(timerInterval);
+          redirection("/");
+        },
+      });
 
-    /*termina logica*/
-
-
+    }
+    /* Validar inicio de sesión con usuario o correo */
   }
+
+  useEffect(() => {
+    iniciarSesion();
+  }, []);
+  /*termina logica*/
+
+
   return (
     <div className="login-page">
 
@@ -87,7 +73,7 @@ function Login() {
 
         <div className="centroLogin">
           <div className="ladoIzquiero"></div>
-          <Formulario className="ladoDerecho" />
+          <Formulario setCorreo={setCorreo}  setContrasena={setContrasena} handlerEnviar={iniciarSesion} className="ladoDerecho" />
         </div>
 
         <div className="abajoLogin">

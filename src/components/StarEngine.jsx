@@ -1,7 +1,7 @@
 import React from 'react';
 import './StarEngine.css';
 
-function StartStopButton() {
+function StartStopButton({ onClick }) {
 
   /* inicio logica*/
 
@@ -25,7 +25,7 @@ function StartStopButton() {
        <div className="button-container">
       <div className="start-stop-button">
         
-      <button type="submit" className='botonEngine'>
+      <button type="submit" className='botonEngine'onClick={onClick}>
         <div className="inner-circle">
           <p className="text">
             <span>START</span>
