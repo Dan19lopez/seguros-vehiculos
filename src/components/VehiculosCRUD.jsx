@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import BuscarPorId from "./BuscarPorId";
 
 const VehiculosCRUD = () => {
   const [vehiculos, setVehiculos] = useState([]);
+  const [vehiculeData, setVehiculeData] = useState([]);
   const [formData, setFormData] = useState({
     id: "",
     cilindraje: "",
@@ -11,39 +13,79 @@ const VehiculosCRUD = () => {
     siniestros: "",
     placa: "",
     descripcion: "",
-    usuario: "",
-    activo: 0,
+    /* usuario: "", */
+    activo: false,
     poliza: "silver",
   });
   const [isEditing, setIsEditing] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [vehicleToDelete, setVehicleToDelete] = useState(null);
+  const [vehicleRead, setVehicleRead] = useState([]);
+
+  useEffect(() => {
+    const fetchVehiculos = async ()=>{
+      const response = await fetch("http://localhost:8080/api/vehiculo")
+      const data = await response.json()
+      setVehicleRead(data)
+      // console.log(data, vehicleRead)
+    }
+
+    fetchVehiculos()
+  }, []);
+
+  
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? (checked ? 1 : 0) : value,
+      [name]: type === "checkbox" ? (checked ? true : false) : value,
     });
   };
 
-  const handleAdd = (e) => {
+  const handleAdd = async (e) => {
     e.preventDefault();
-    const newVehicle = { ...formData, id: Date.now() };
-    setVehiculos([...vehiculos, newVehicle]);
-    setFormData({
-      id: "",
-      cilindraje: "",
-      color: "",
-      marca: "",
-      modelo: "",
-      siniestros: "",
-      placa: "",
-      descripcion: "",
-      usuario: "",
-      activo: 0,
-      poliza: "silver",
-    });
+    // console.log(e.target.cilindraje.value)
+    const cilindraje = e.target.cilindraje.value
+    const color = e.target.color.value
+    const marca = e.target.marca.value
+    const modelo = e.target.modelo.value
+    const siniestros = e.target.siniestros.value
+    const placa = e.target.placa.value
+    const descripcion = e.target.descripcion.value
+    const poliza = e.target.poliza.value
+    const activo = e.target.activo.checked
+    const dataObject = {cilindraje,color,marca,modelo,siniestros,placa,descripcion,poliza,activo}
+    // console.log(cilindraje,color,marca,modelo,siniestros,placa,descripcion,poliza,activo)
+    setVehiculeData(dataObject)
+    try {
+      const response = await fetch("http://localhost:8080/api/vehiculo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataObject),
+      });
+      if (response.ok) {
+        const newVehicle = await response.json();
+        setVehiculos([...vehiculos, newVehicle]);
+        setFormData({
+          cilindraje: "8000",
+          color: "rojo",
+          marca: "toyota",
+          modelo: "nose",
+          siniestros: "9",
+          placa: "fya4343",
+          descripcion: "sino",
+          /* usuario: "liliana", */
+          activo: true,
+          poliza: "silver",
+        });
+      }
+    } catch (error) {
+      console.error("Error adding vehicle:", error);
+    }
   };
 
   const handleEdit = (vehiculo) => {
@@ -51,123 +93,143 @@ const VehiculosCRUD = () => {
     setIsEditing(true);
   };
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
-    setVehiculos(
-      vehiculos.map((vehiculo) =>
-        vehiculo.id === formData.id ? formData : vehiculo
-      )
-    );
-    setFormData({
-      id: "",
-      cilindraje: "",
-      color: "",
-      marca: "",
-      modelo: "",
-      siniestros: "",
-      placa: "",
-      descripcion: "",
-      usuario: "",
-      activo: 0,
-      poliza: "silver",
-    });
-    setIsEditing(false);
+    try {
+      const response = await fetch(`http://localhost:8080/api/vehiculo/${formData.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setVehiculos(
+          vehiculos.map((vehiculo) =>
+            vehiculo.id === formData.id ? formData : vehiculo
+          )
+        );
+        setFormData({
+          id: "",
+          cilindraje: "",
+          color: "",
+          marca: "",
+          modelo: "",
+          siniestros: "",
+          placa: "",
+          descripcion: "",
+          activo: false,
+          poliza: "silver",
+        });
+        setIsEditing(false);
+      }
+    } catch (error) {
+      console.error("Error updating vehicle:", error);
+    }
   };
 
-  const handleConfirmDelete = (id) => {
-    setVehiculos(vehiculos.filter((vehiculo) => vehiculo.id !== id));
-    setShowModal(false);
+  const handleConfirmDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/vehiculo/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        setVehiculos(vehiculos.filter((vehiculo) => vehiculo.id !== id));
+        setShowModal(false);
+      }
+    } catch (error) {
+      console.error("Error deleting vehicle:", error);
+    }
   };
+
+
 
   const handleDelete = (vehiculo) => {
     setVehicleToDelete(vehiculo);
     setShowModal(true);
   };
 
+
+  const [vehiculoById,setVehiculoById]=useState([]);
+  const handleSearch =async(id) => {
+
+   const respuesta= await fetch (`http://localhost:8080/api/vehiculo/${id}`);
+   const respuestaConvertida=respuesta.json();
+   if (respuesta.ok) {
+    setVehiculoById(respuestaConvertida);
+
+   }
+  }
+
   return (
+
     <div className="vehiculos-crud">
+      
       <h1>Gestión de Vehículos</h1>
+      <BuscarPorId funcionParaEditar = {handleEdit} funcionParaEliminar={handleDelete} />
 
       {/* Formulario */}
-      <form onSubmit={isEditing ? handleUpdate : handleAdd}>
-        <input
+      <form onSubmit={handleAdd}>
+        {/* <input
           type="text"
           name="id"
           placeholder="ID del vehículo"
-          value={formData.id}
-          onChange={handleChange}
-          required
+          
         />
+        <button onClick={handleSearch}>Buscar</button> */}
+     
         <input
           type="number"
           name="cilindraje"
           placeholder="Cilindraje"
-          value={formData.cilindraje}
-          onChange={handleChange}
           required
         />
         <input
           type="text"
           name="color"
           placeholder="Color"
-          value={formData.color}
-          onChange={handleChange}
           required
         />
         <input
           type="text"
           name="marca"
           placeholder="Marca"
-          value={formData.marca}
-          onChange={handleChange}
           required
         />
         <input
           type="text"
           name="modelo"
           placeholder="Modelo"
-          value={formData.modelo}
-          onChange={handleChange}
           required
         />
         <input
           type="number"
           name="siniestros"
           placeholder="Siniestros"
-          value={formData.siniestros}
-          onChange={handleChange}
           required
         />
         <input
           type="text"
           name="placa"
           placeholder="Placa"
-          value={formData.placa}
-          onChange={handleChange}
           required
         />
         <textarea
           name="descripcion"
           placeholder="Descripción"
-          value={formData.descripcion}
-          onChange={handleChange}
           required
         />
-        <input
+        {/* <input
           type="text"
           name="usuario"
           placeholder="Usuario"
-          value={formData.usuario}
-          onChange={handleChange}
           required
-        />
+        /> */}
         <label>
           Activo:
           <input
             type="checkbox"
             name="activo"
-            checked={formData.activo === 1}
-            onChange={handleChange}
           />
         </label>
         <label>
@@ -193,14 +255,14 @@ const VehiculosCRUD = () => {
             <th>Siniestros</th>
             <th>Placa</th>
             <th>Descripción</th>
-            <th>Usuario</th>
+            {/* <th>Usuario</th> */}
             <th>Activo</th>
             <th>Póliza</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {vehiculos.map((vehiculo) => (
+          {vehicleRead.map((vehiculo) => (
             <tr key={vehiculo.id}>
               <td>{vehiculo.id}</td>
               <td>{vehiculo.cilindraje}</td>
@@ -210,12 +272,12 @@ const VehiculosCRUD = () => {
               <td>{vehiculo.siniestros}</td>
               <td>{vehiculo.placa}</td>
               <td>{vehiculo.descripcion}</td>
-              <td>{vehiculo.usuario}</td>
-              <td>{vehiculo.activo === 1 ? "Sí" : "No"}</td>
+              {/* <td>{vehiculo.usuario}</td> */}
+              <td>{vehiculo.activo === true ? "Sí" : "No"}</td>
               <td>{vehiculo.poliza}</td>
               <td>
-                <button onClick={() => handleEdit(vehiculo)}>Editar</button>
-                <button onClick={() => handleDelete(vehiculo)}>Eliminar</button>
+                <button onClick={() => handleEdit(vehiculo.id)}>Editar</button>
+                <button onClick={() => handleDelete(vehiculo.id)}>Eliminar</button>
               </td>
             </tr>
           ))}
@@ -241,4 +303,4 @@ const VehiculosCRUD = () => {
   );
 };
 
-  export default VehiculosCRUD;
+export default VehiculosCRUD;

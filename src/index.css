@@ -1,4 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Global Styles */
+
+
 :root {
   /*Colores del proyecto*/
   --color-1: #FFFFFF;

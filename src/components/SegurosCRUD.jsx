@@ -20,7 +20,7 @@ const SegurosCRUD = () => {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await fetch("http://localhost:7715/usuarios");
+        const response = await fetch("http://localhost:8080/api/usuario");
         const data = await response.json();
         setUsuarios(data);
       } catch (error) {
@@ -49,7 +49,7 @@ const SegurosCRUD = () => {
     const newUser = { ...formData, id: generateNewId() };
 
     try {
-      const response = await fetch("http://localhost:7715/usuarios", {
+      const response = await fetch("http://localhost:8080/api/usuario", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
