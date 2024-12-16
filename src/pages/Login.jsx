@@ -7,7 +7,7 @@ import "./Login.css"
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  /* inicio logica*/
+  /* inicio logica
 
  /* const Login = () => {
     const [getCorreo, setCorreo] = useState("");
@@ -96,5 +96,6 @@ function Login() {
     </div>
   );
 }
+
 
 export default Login;
