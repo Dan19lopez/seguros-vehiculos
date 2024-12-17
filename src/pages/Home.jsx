@@ -7,7 +7,7 @@ const Home = () => {
 
 let redireccion = useNavigate();
 const handleClick =()=>{
-  redireccion("/Landing")
+  redireccion("/")
 }
 
   return (

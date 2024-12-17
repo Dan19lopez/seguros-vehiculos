@@ -28,10 +28,10 @@ function StartStopButton({ onClick }) {
       <button type="submit" className='botonEngine'onClick={onClick}>
         <div className="inner-circle">
           <p className="text">
-            <span>START</span>
-            <span>STOP</span>
+            <span>ENVIAR</span>
+            <span>INFO</span>
           </p>
-          <p className="engine-text">ENGINE</p>
+          <p className="engine-text">START</p>
         </div>
         </button>
       </div>

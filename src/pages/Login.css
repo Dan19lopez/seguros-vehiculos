@@ -1,6 +1,4 @@
-/* {
-border: red solid 1px;
-}*/
+
 
 
 .login-page {
@@ -18,6 +16,10 @@ border: red solid 1px;
     background-size: cover; /* Asegúrate de que cubra toda el área */
     background-position: center;
     /*gap: 0px;*/
+  }
+
+  .formLogin{
+    width: 115%;
   }
 
   .tituloLogin{
@@ -39,9 +41,10 @@ border: red solid 1px;
 
 
 .modalIniciarSesion{
-  width: 70vw;
+  width: 100vw;
   height: 80vh;
-  margin-left: 15vw;
+  margin-left: auto;
+  margin-right: auto;
   /*width: 1080px;*/
   /*height: 700px;*/
   /*margin-left: 10px;*/
@@ -53,6 +56,8 @@ border: red solid 1px;
   text-align: center;
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
   z-index: 0;
+  border: red solid 1px;
+  
 
 }
 
@@ -62,7 +67,7 @@ border: red solid 1px;
   background-image: url('../img/nuevologinsinconsola.jpg');
   /*background-size: 725px 850px;*/
   background-repeat: no-repeat;
-  background-position: center;
+  background-position-x: 0;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -86,17 +91,18 @@ border: red solid 1px;
 
 .formLogin {
 
-  width: 80%;
-  max-width: 350px;
-  height: 200px;
-  /*position: absolute;*/
-  /*top: 170px;*/
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  position: relative;
+  top: 0px;
+  left: 15px;
   /*background-color: var(--color-6);*/
   padding: 30px;
   /*margin-right: 50px;*/
   margin-right:10%;
   margin-left:10%;
-  border-radius: 8px;
+  border-radius: 25px;
 
 }
 
@@ -107,8 +113,13 @@ border: red solid 1px;
    -webkit-backdrop-filter: blur(25px); /* Para compatibilidad con navegadores WebKit */
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
-   z-index: 2;
+   z-index: 6;
    border-radius: 12px;
+   position: relative;
+  top: 100  px; /*con esto se mueve todo el formulario vidrio y consola juntos eje y*/
+  left: 150px; /*con esto se mueve todo el formulario vidrio y consola juntos eje X*/
+  width: auto;
+  
 }
 
 /* ubicacion componente ============Start-sotp boton solo se ubica desde singiin.css==================*/
@@ -127,16 +138,18 @@ border: red solid 1px;
   padding-top: 10px;
   margin-bottom: 10px;
   margin-top: 30px;*/
-  width: 100%;
-  padding-top: 10px;
-  margin-bottom: 10px;
-  margin-top: 30px;
+  width: 95%;
+    
+ 
+  
   font-size: 16px;
   border: 1px solid var(--color-1);
   border-radius: 4px;
-  padding: 0px; /* Ajusta este valor según tus necesidades */
-  box-sizing: border-box;
+  padding: 4px; /* Ajusta este valor según tus necesidades */
+  /*box-sizing: border-box;*/
   transition: border-color 0.3s;
+  gap: 15px;
+  
 }
 
 .input:focus {
@@ -203,7 +216,7 @@ border: red solid 1px;
   display: flex;
   flex-direction: row;
   width:100%;
-  height: 39vh;
+  height: 35vh;
   justify-content: space-around;
  /* outline: 3px solid rgb(0, 229, 255);*/
 }
@@ -229,4 +242,16 @@ border: red solid 1px;
   align-items: center;
   /*outline: 3px solid rgb(255, 0, 217);*/
 }
+.contenidoInput{
+  padding: 25px;
+  margin-top: 25px;
+}
 
+.contenidoInput{
+height: 30px;
+border-top: 0;
+/*margin: 0;*/
+position:relative;
+left: -55px;
+top: -30px;
+}

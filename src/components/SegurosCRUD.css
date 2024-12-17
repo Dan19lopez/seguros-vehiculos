@@ -17,32 +17,32 @@ body {
 }
 
 /* Formulario */
-form {
+/*form {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 20px;
-}
+}*/
 
-form input[type="text"],
+/*form input[type="text"],
 form input[type="date"] {
   flex: 1 1 calc(50% - 10px);
   padding: 8px;  /* Reducción del padding */
-  font-size: 14px;  /* Ajuste del tamaño de fuente */
-  border: 1px solid #ccc;
+  /*font-size: 14px;  /* Ajuste del tamaño de fuente */
+ /* border: 1px solid #ccc;
   border-radius: 5px;
-}
-
+}*/
+/*
 form input[type="text"]:focus,
 form input[type="date"]:focus {
   border-color: #007bff;
   outline: none;
-}
+}*/
 
-form button {
+/*form button {
   flex: 1 1 100%;
-  padding: 8px;  /* Reducción del padding */
-  background-color: #007bff;
+  /*padding: 8px;  /* Reducción del padding */
+  /*background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -52,7 +52,7 @@ form button {
 
 form button:hover {
   background-color: #0056b3;
-}
+}*/
 
 /* Tabla */
 table {
@@ -121,7 +121,7 @@ table button:last-of-type {
   z-index: 1000;
 }
 
-.modal {
+/*.modal {
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -131,7 +131,7 @@ table button:last-of-type {
 
 .modal h2 {
   margin-bottom: 10px;
-}
+}*/
 
 .modal-buttons button {
   margin: 0 50px;
