@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import "./BotonCerrar.css"
 
-export default function BotonCerrar(){
+export default function BotonCerrar() {
 
-    return(
-        <button  type="button" className="closeButton">X</button>
+    let redireccion = useNavigate();
+    const handleClick = () => {
+        redireccion("/")
+    }
+
+    return (
+        <button type="button" className="closeButton" onClick={handleClick}>Regresar</button>
     );
 }

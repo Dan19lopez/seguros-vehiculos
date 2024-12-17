@@ -7,11 +7,11 @@ function Formulario({ setCorreo, setContrasena, handlerEnviar }) {
     <div className="formulario">
       <form className="formLogin" onSubmit={(e) => e.preventDefault()}>
         <div className="contenidoInput">
-          <label htmlFor="usuario">Usuario</label>
+        <label htmlFor="usuario">E-mail</label>
           <input
             type="text"
-            id="usuario"
-            placeholder="Usuario"
+            id="usuarioA"
+            placeholder="Email"
             className="inputA"
             onChange={(e) => setCorreo(e.target.value)} // Actualiza el estado del correo
           />

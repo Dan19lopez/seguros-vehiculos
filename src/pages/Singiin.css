@@ -3,43 +3,92 @@
   .signiin-page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
+    justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
-    /* 100% del alto de la ventana */
     width: 100vw;
-    /* 100% del ancho de la ventana */
+    height: 100vh;
+    /* height:100% del alto de la ventana */
+    /* width: 100vw; 100% del ancho de la ventana */
     /*background-image: url('../img/fondocarretera.jpg');*/
     background-color: var(--color-7);
     background-size: cover;
     /* Asegúrate de que cubra toda el área */
     background-position: center;
-    gap: 0px;
+    /*gap: 0px;*/
   }
 
-  .titulo {
+  .tituloLogin {
     color: var(--color-1);
     font-size: 1.8rem;
 
   }
 
-  .parrafo {
+  .parrafoLogin {
     color: var(--color-8);
     font-size: medium;
-    position: absolute;
-    /* Lo posiciona con respecto a su contenedor padre */
-    top: 15%;
-    /* Lo coloca en la parte superior */
-    left: 50%;
-    /* Lo centra horizontalmente */
-    transform: translateX(-50%);
-    /* Ajuste para centrar completamente */
+    /*position: absolute; Lo posiciona con respecto a su contenedor padre */
+    /*top: 15%;  Lo coloca en la parte superior */
+    /*left: 50%;  Lo centra horizontalmente */
+    /*transform: translateX(-50%); /* Ajuste para centrar completamente */
     text-align: center;
     /* Centra el texto */
     font-weight: bold;
   }
 
-  .formularioDos {
+  .modalIniciarSesion {
+    width: 90vw;
+    height: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 1080px;*/
+    /*height: 700px;*/
+    /*margin-left: 10px;*/
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
+    z-index: 0;
+    /*border: red solid 1px;*/
+  }
+
+  .modalIniciarSesion {
+    /*background-color: var(--color-7);*/
+    /* background-color: var(--color-1);*/
+    background-image: url('../img/nuevologinsinconsola.jpg');
+    /*background-size: 725px 850px;*/
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .btn2Login {
+    background: none !important;
+    /* Elimina el fondo */
+    border: none !important;
+    /* padding: 0;*/
+    color: var(--color-1);
+    /* Color del texto */
+    font-size: 16px;
+    /* Tamaño del texto */
+    text-decoration: underline;
+    /* Subrayado, para enlace */
+    cursor: pointer;
+    /* Cambia el cursor a "manito" al pasar por encima */
+    /* margin-bottom: 0px;*/
+    /* position: relative;*/
+    /* top: -70px;*/
+  }
+
+
+
+  /*.formularioDos {
     width: 1080px;
     height: 700px;
     margin-left: 10px;
@@ -49,9 +98,28 @@
     align-items: center;
     text-align: center;
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
-  }
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    /*background: rgba(255, 255, 255, 0.05);
+    /* Fondo semitransparente */
+    /*backdrop-filter: blur(5px);
+    /* Desenfoque del fondo detrás */
+    /*-webkit-backdrop-filter: blur(25px);
+    /* Para compatibilidad con navegadores WebKit */
+   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    /*border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Borde para realzar el efecto de vidrio */
+   /* z-index: 6;
+    border-radius: 12px;
+    position: relative;
+    top: 300 px;
+    /*con esto se mueve todo el formulario vidrio y consola juntos eje y*/
+    /*left: 150px;
+    /*con esto se mueve todo el formulario vidrio y consola juntos eje X*/
+    /*width: auto;
+  }*/
 
-  .formularioDos {
+  /*.formularioDos {
     background-color: var(--color-1);
     background-image: url('../img/newlogin.jpg');
     background-size: 725px 850px;
@@ -62,7 +130,7 @@
     flex-direction: column;
     align-items: end;
 
-  }
+  }*/
 
   .btn2 {
     background: none !important;
@@ -79,67 +147,54 @@
     /* Cambia el cursor a "mano" al pasar por encima */
     margin-bottom: 0px;
     position: relative;
-    top: -70px;
+    top: 0px;
   }
 
-  .btn2:hover {
+  /*.btn2:hover {
     color: var(--color-8);
     /* Color más oscuro al pasar el mouse */
-  }
+  /*}*/
+
+  /*.inputA{
+    /*width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;*/
+    /*width: 95%;  
+    font-size: 16px;
+    border: 1px solid var(--color-1);
+    border-radius: 4px;
+    padding: 4px; */
+    /* Ajusta este valor según tus necesidades */
+    /*box-sizing: border-box;*/
+    /*transition: border-color 0.3s;
+    gap: 15px;  */
+  /*}*/
+
+  
+.input:focus {
+  border-color: var(--color-3);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 
 
-  .formDos {
 
-    width: 80%;
-    max-width: 350px;
-    height: 200px;
-    position: absolute;
-    top: 170px;
-    background-color: var(--color-1);
-    padding: 30px;
-    margin-right: 50px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-    /* Fondo semitransparente */
-    backdrop-filter: blur(5px);
-    /* Desenfoque del fondo detrás */
-    -webkit-backdrop-filter: blur(25px);
-    /* Para compatibilidad con navegadores WebKit */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Borde para realzar el efecto de vidrio */
-  }
-
-/* ubicacion componente ============Start-sotp boton solo se ubica desde este componente==================*/
+  /* ubicacion componente ============Start-sotp boton solo se ubica desde este componente==================*/
 
   .button-container {
     position: absolute;
     top: 35px;
     left: 120px;
-   /* top: 325px;*/
-   /* left: 175px;*/
+    /* top: 325px;*/
+    /* left: 175px;*/
 
   }
 
-/*========================================================================================================*/
+  /*========================================================================================================*/
 
-  .input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    border: 1px solid var(--color-1);
-    border-radius: 4px;
-    transition: border-color 0.3s;
-  }
-
-  .input:focus {
-    border-color: var(--color-1);
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
+ 
+ 
 
   .btn {
     padding: 10px 20px;
@@ -153,6 +208,59 @@
 
   .btn:hover {
     background-color: var(--color-4);
+  }
+
+  .containerHeader{
+    width: 100%;
+    height: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+  }
+
+  .arribaLogin{
+    width:100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+   /* outline: 3px solid rgb(26, 255, 0);*/
+    justify-content: space-evenly;
+    align-items: center;
+    gap:18px;
+  }
+
+  .centroLogin{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height: 35vh;
+    justify-content: space-around;
+   /* outline: 3px solid rgb(0, 229, 255);*/
+  }
+
+  .ladoIzquierdo{
+    width:50%;
+    height: 100%;
+  }
+  .ladoDerecho{
+    width:50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px;
+  }
+  .abajoLogin{
+    width:100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    /*outline: 3px solid rgb(255, 0, 217);*/
   }
 
   /* nota especial, no se porque pero esta hoja afecta tanto a las Singiin como a la login, 

@@ -76,7 +76,7 @@ function Login() {
           <Formulario setCorreo={setCorreo}  setContrasena={setContrasena} handlerEnviar={iniciarSesion} className="ladoDerecho" />
         </div>
 
-        <div className="abajoLogin">
+        <div className="abajoLogin">  
           <Loggin className="" />
         </div>
 
