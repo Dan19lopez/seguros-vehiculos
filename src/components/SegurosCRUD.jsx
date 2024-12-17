@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const SegurosCRUD = () => {
   const [usuarios, setUsuarios] = useState([]);
+  const [userData, setUserData] = useState([]);
   const [formData, setFormData] = useState({
     id: "",
     nombre: "",
@@ -16,16 +17,15 @@ const SegurosCRUD = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [userToDelete, setUserToDelete] = useState(null);
+  const [userRead, setUserRead] = useState([]);
 
   useEffect(() => {
     const fetchUsuarios = async () => {
-      try {
         const response = await fetch("http://localhost:8080/api/usuario");
         const data = await response.json();
-        setUsuarios(data);
-      } catch (error) {
-        console.error("Error al traer los usuarios:", error);
-      }
+        setUserRead(data);
+      
+        
     };
 
     fetchUsuarios();
@@ -35,7 +35,7 @@ const SegurosCRUD = () => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? (checked ? 1 : 0) : value,
+      [name]: type === "checkbox" ? (checked ? true : false) : value,
     });
   };
 
@@ -47,19 +47,29 @@ const SegurosCRUD = () => {
   const handleAdd = async (e) => {
     e.preventDefault();
     const newUser = { ...formData, id: generateNewId() };
+    const id = e.target.id.value
+    const nombre = e.target.nombre.value
+    const correo = e.target.correo.value
+    const telefono = e.target.telefono.value
+    const cedula = e.target.cedula.value
+    const contrasena = e.target.contrasena.value
+    const fecha = e.target.fecha_nacimiento.value 
+    const activo = e.target.activo.checked
+    const dataObject = {id,nombre,correo,telefono,cedula,contrasena,fecha,activo}
 
+    setUserData(dataObject)
     try {
       const response = await fetch("http://localhost:8080/api/usuario", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(newUser)
+        body: JSON.stringify(dataObject),
       });
 
       if (response.ok) {
-        const createdUser = await response.json();
-        setUsuarios([...usuarios, createdUser]);
+        const newUser = await response.json();
+        setUsuarios([...usuarios, newUser]);
         setFormData({
           id: "",
           nombre: "",
@@ -68,7 +78,7 @@ const SegurosCRUD = () => {
           cedula: "",
           contrasena: "",
           fecha_nacimiento: "",
-          activo: 0,
+          activo: true,
         });
       } else {
         console.error("Error al crear el usuario:", response.status);
@@ -83,10 +93,21 @@ const SegurosCRUD = () => {
     setIsEditing(true);
   };
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
+    try {
+      const response = await fetch (`http://localhost:8080/api/vehiculo/${formData.id}`,{
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if(response.ok){
     setUsuarios(
-      usuarios.map((usuario) => (usuario.id === formData.id ? formData : usuario))
+      usuarios.map((usuario) => 
+      usuario.id === formData.id ? formData : usuario
+    )
     );
     setFormData({
       id: "",
@@ -96,20 +117,44 @@ const SegurosCRUD = () => {
       cedula: "",
       contrasena: "",
       fecha_nacimiento: "",
-      activo: 0,
+      activo: false,
     });
     setIsEditing(false);
-  };
+    }
+  } catch (erro) {
+    console.error("Error cambiando usuario:", error);
+  }
+};
 
-  const handleConfirmDelete = (id) => {
+  
+  const handleConfirmDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/vehiculo/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
     setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
     setShowModal(false);
+    }
+    } catch (error) {
+      console.error("Error eliminando usuario:", error);
+    }
   };
 
   const handleDelete = (usuario) => {
     setUserToDelete(usuario);
     setShowModal(true);
   };
+
+  const [usuarioById,setUsuarioById]=useState([]);
+  const handleSearch = async(id) => {
+
+    const respuesta = await fetch (`http://localhost:8080/api/vehiculo/${id}`)
+    const respuestaConvertida=respuesta.json();
+    if (respuesta.ok) {
+      setUsuarioById(respuestaConvertida);
+    }
+  }
 
   return (
     <div className="usuarios-crud">
