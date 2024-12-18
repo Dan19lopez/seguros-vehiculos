@@ -251,6 +251,13 @@
 
 }
 
+/*.
+.button-container {
+  position: absolute;
+  top: 35px;
+  left: 120px;
+}
+*/
 /*.btn:hover {
   background-color: var(--color-3);
 }
@@ -407,9 +414,103 @@
 
 
 /* Teléfonos pequeños */
-@media (min-width: 320px) and (max-width: 359px) {
+@media (min-width: 320px) and (max-width: 344px) {
   /* Estilos para teléfonos pequeños */
+  .login-page {
+    /* outline: 1px solid red;*/
+   }
+ 
+     /* Estilos para teléfonos estándar */
+  .button-container {
+    position: absolute;
+    top: 38px;
+    left: 9px;
+    /* top: 325px; */
+    /* left: 175px; */
 }
+   .formLogin, .formDos {
+    width: 100%;
+    max-width: 450px;
+    height: 134%;
+    position: relative;
+    top: 13%;
+    left: 19%;
+    padding-top: 19%;
+    padding-right: 0%;
+    margin-top: -21%;
+    margin-left: -19%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+  border-radius: 9%;
+}
+.consola {
+  width: 80%;
+  height: 248px;
+  background-image: url(/src/img/consola.png);
+  z-index: 1;
+  /* background-position-x: -736px; */
+  background-position-y: -208px;
+  background-position-x: -97px;
+  background-size: 450px 450px;
+  background-repeat: no-repeat;
+  /* border: red solid 1px; */
+  position: relative;
+  border-radius: 14%;
+  top: 1%;
+  left: 1%;
+}
+ 
+ .abajoLogin {
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+ 
+   /*outline: 3px solid rgb(255, 0, 217);*/
+ }
+ 
+ .arribaLogin {
+  width: 100%;
+  height: 10vh;
+  display: flex
+;
+  flex-direction: column;
+  /* outline: 3px solid rgb(26, 255, 0); */
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 18px;
+  row-gap: 18px;
+  column-gap: 18px;
+}
+}
+
+/* Teléfonos estándar */
+@media (min-width: 345px) and (max-width: 359px) {
+
+}
+
 
 /* Teléfonos estándar */
 @media (min-width: 360px) and (max-width: 389px) {
@@ -486,6 +587,11 @@
   align-items: center;
   gap: 18px;
 }
+.button-container {
+  position: absolute;
+  top: 35px;
+  left: 22px;
+}
 }
 
 /* Phablets o teléfonos grandes */
@@ -500,11 +606,52 @@
 /* Tablets en orientación vertical y teléfonos grandes */
 @media (min-width: 768px) and (max-width: 911px) {
   /* Estilos para tablets en vertical */
+  .arribaLogin {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 18px;
 }
+.contenidoInput {
+  padding: 25px;
+  margin-top: 25px;
+  height: 30px;
+  border-top: 0;
+  /* margin: 0; */
+  position: relative;
+  left: -4px;
+  top: -30px;
+}
+  
+.formLogin, .formDos {
+  width: 110%;
+  max-width: 450px;
+  height: 108%;
+  position: relative;
+  top: 28%;
+  left: -15%;
+  padding-top: 19%;
+  padding-right: 4%;
+  margin-top: -21%;
+  margin-left: -15%;
+  border-radius: 5%;
+  /* outline: 1px solid rgb(0, 208, 255); */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+}
+
 
 @media (min-width: 912px) and (max-width: 991px) {
   /* Estilos para tablets grandes o teléfonos muy grandes */
 }
+  
 
 /* Tablets en orientación horizontal */
 @media (min-width: 992px) and (max-width: 1023px) {
@@ -567,7 +714,11 @@
 
   /*outline: 3px solid rgb(255, 0, 217);*/
 }
-
+.button-container {
+  position: absolute;
+  top: 35px;
+  left: -20px;
+}
 }
 
 /* Pantallas extra grandes */
@@ -623,6 +774,12 @@
   justify-content: flex-start;
 
   /*outline: 3px solid rgb(255, 0, 217);*/
+ 
+}
+.button-container {
+  position: absolute;
+  top: 35px;
+  left: -20px;
 }
 }
 
