@@ -10,6 +10,10 @@
     overflow-x: hidden;
   }*/
   
+*{
+  border: red solid 1px;
+}
+
   .home-container {
     display: flex;
     flex-direction: column;
@@ -66,7 +70,7 @@
   position: relative;
   width: 100%;
   height: 70vh;
-  background: url('/src/img/Home8.webp') center/cover no-repeat; /* Imagen de respaldo */
+  background: url('/src/img/bgHeroSection.jpg') center/cover no-repeat; /* Imagen de respaldo */
   overflow: hidden; /* Asegura que nada se desborde */
 }
 
@@ -76,7 +80,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Coloca el video detrás del contenido */
+  z-index: 5; /* Coloca el video detrás del contenido */
   overflow: hidden;
 }
 
@@ -102,7 +106,7 @@
   background: rgba(0, 0, 0, 0.5); /* Oscurece ligeramente para mejorar el contraste */
   color: white;
   text-align: center;
-  z-index: 1; /* Asegura que el contenido esté encima del video */
+  z-index: 0; /* Asegura que el contenido esté encima del video */
 }
 
   
