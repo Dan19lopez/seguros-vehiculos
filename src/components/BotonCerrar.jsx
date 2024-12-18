@@ -9,6 +9,6 @@ export default function BotonCerrar() {
     }
 
     return (
-        <button type="button" className="closeButton" onClick={handleClick}>Regresar</button>
+        <button type="button" className="closeButton" onClick={handleClick}>Volver al Inicio</button>
     );
 }
