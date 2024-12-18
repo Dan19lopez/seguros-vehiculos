@@ -924,10 +924,10 @@
   top: -30px;
 }
   
-.formLogin, .formDos {
+.formLogin {
   width: 110%;
   max-width: 450px;
-  height: 117%;
+  height: 108%;
   position: relative;
   top: 28%;
   left: -15%;
@@ -945,8 +945,8 @@
 }
 .button-container {
   position: absolute;
-  top: 35px;
-  left: 3px;
+  top: 34px;
+  left: 116px;
 }
 }
 
