@@ -83,7 +83,7 @@ function SingIIn() {
           <FormularioDos setCorreo={setCorreo}
             setContrasena={setContrasena}
             setCedula={setCedula}
-            handlerEnviar={handleSubmit} />
+            handlerEnviar={handleSubmit} className="ladoDerecho"/>
         </div>
 
         <div className="abajoSingin">
@@ -93,4 +93,5 @@ function SingIIn() {
     </div>
   );
 }
+
 export default SingIIn;

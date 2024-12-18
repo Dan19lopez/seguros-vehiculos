@@ -97,8 +97,7 @@
 }
 
 
-.formLogin,
-.formDos {
+.formLogin {
 
   width: 150%;
   max-width: 450px;
@@ -122,34 +121,9 @@
 
 .formDos {
   top: -52px;
-  left: px;
+  left: 20px;
 }
 
-
-
-/*.formulario,*/
-.formularioDos {
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-  background: rgba(255, 255, 255, 0.05);
-  /* Fondo semitransparente */
-  backdrop-filter: blur(5px);
-  /* Desenfoque del fondo detrás */
-  -webkit-backdrop-filter: blur(25px);
-  /* Para compatibilidad con navegadores WebKit */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Sombra sutil */
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  /* Borde para realzar el efecto de vidrio */
-  z-index: 6;
-  border-radius: 12px;
-  position: relative;
-  top: 100 px;
-  /*con esto se mueve todo el formulario vidrio y consola juntos eje y*/
-  left: 150px;
-  /*con esto se mueve todo el formulario vidrio y consola juntos eje X*/
-  width: auto;
-
-}
 
 .formDos,
 .formLogin {
@@ -157,10 +131,10 @@
 
 }
 
-.formularioDos {
+/*.formularioDos {
   border: black solid 1px;
   left: 160px;
-}
+}*/
 
 /* ubicacion componente ============Start-sotp boton solo se ubica desde singiin.css==================*/
 
@@ -224,14 +198,14 @@
   padding: 10px 20px;
   margin: 10px;
   background-color: var(--color-1);
-  color: var(--color-1);
+  color: var(--color-4);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .btn2:hover {
-  background-color: var(--color-4);
+  background-color: var(--color-5);
 }
 .consola{
   /*451 470 96 2*/
@@ -1246,7 +1220,7 @@
 
   
  
- .formLogin, .formDos {
+ .formLogin {
    width: 150%;
    max-width: 450px;
    height: 158%;
