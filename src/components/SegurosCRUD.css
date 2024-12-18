@@ -70,7 +70,7 @@ table td {
 }
 
 table th {
-  background-color: #007bff;
+  background: linear-gradient(15deg, #64BFE4,#184160 );
   color: white;
   text-transform: uppercase;
 }
@@ -106,6 +106,8 @@ table button:last-of-type {
   background-color: #dc3545;
   color: white;
 }
+
+
 
 /* Modal */
 /* .modal-backdrop {

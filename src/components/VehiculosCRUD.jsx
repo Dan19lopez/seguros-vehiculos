@@ -162,8 +162,8 @@ const VehiculosCRUD = () => {
   }
 
   return (
-    <div className="vehiculos-crud bg-color1 p-8 font-primary flex justify-center items-center min-h-screen">
-      <div className="w-full max-w-md">
+    <div className="vehiculos-crud bg-color1 p-8 font-primary min-h-screen flex flex-col lg:flex-row lg:justify-between lg:items-start">
+      <div className="w-full lg:w-1/2 p-4">
         <h1 className="text-2xl font-bold text-color7 mb-4 text-center">Gestión de Vehículos</h1>
         <BuscarPorId funcionParaEditar={handleEdit} funcionParaEliminar={handleDelete} handleSearch={handleSearch} vehiculoById={vehiculoById} />
   
@@ -245,15 +245,15 @@ const VehiculosCRUD = () => {
               <option value="Platinum">Platinum</option>
             </select>
           </label>
-          <button type="submit" className="bg-color4 text-color1 px-4 py-2 rounded w-full">
+          <button type="submit" className="bg-color6 text-color1 px-4 py-2 rounded w-full">
             {isEditing ? "Actualizar" : "Agregar"}
           </button>
         </form>
       </div>
   
       {/* Tabla */}
-      <div className="mt-[-770px] ml-8 w-full overflow-x-auto">
-        <table className="w-full bg-color1 table-auto">
+      <div className="w-full lg:w-1/2 p-4 lg:mt-[1.8rem] overflow-x-auto">
+        <table className="w-full bg-color1 table-auto text-sm">
           <thead>
             <tr>
               <th className="border-b-2 border-color3 px-4 py-2 text-center">ID</th>
@@ -272,17 +272,17 @@ const VehiculosCRUD = () => {
           <tbody>
             {vehiculos.map((vehiculo) => (
               <tr key={vehiculo.id}>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.id}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.cilindraje}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.color}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.marca}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.modelo}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.siniestros}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.placa}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.descripcion}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.activo ? "Sí" : "No"}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">{vehiculo.poliza}</td>
-                <td className="border-b border-color2 px-4 py-2 text-center">
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.id}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.cilindraje}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.color}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.marca}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.modelo}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.siniestros}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.placa}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.descripcion}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.activo ? "Sí" : "No"}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">{vehiculo.poliza}</td>
+                <td className="border-b border-color2 px-2 sm:px-4 py-2 text-center">
                   <button onClick={() => handleEdit(vehiculo.id)} className="bg-color5 text-color1 px-2 py-1 rounded mr-2">
                     Editar
                   </button>
@@ -315,6 +315,8 @@ const VehiculosCRUD = () => {
       )}
     </div>
   );
+  
+  
   
   
 };
