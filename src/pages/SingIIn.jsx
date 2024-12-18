@@ -55,10 +55,10 @@ function SingIIn() {
       console.error("Error en la solicitud:", error);
       alert("Ocurrió un error al enviar los datos");
     }
-
+/* 
     useEffect (() => {
       handleSubmit ();
-    }, []);
+    }, []);*/
 
   } /* final de funcion asincronica*/
 
