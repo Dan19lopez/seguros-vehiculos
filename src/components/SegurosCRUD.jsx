@@ -157,7 +157,7 @@ const SegurosCRUD = () => {
   }
 
   return (
-    <div className="usuarios-crud bg-color1 p-8 font-primary flex justify-center items-center min-h-screen">
+    <div className="usuarios-crud bg-color1 p-8 font-primary min-h-screen flex flex-col lg:flex-row lg:justify-center lg:items-start">
       <div className="w-full max-w-md">
         <h1 className="text-2xl font-bold text-color7 mb-4 text-center">Gestión de Usuarios</h1>
   
@@ -234,14 +234,14 @@ const SegurosCRUD = () => {
               className="form-checkbox h-5 w-5 text-color4"
             />
           </label>
-          <button type="submit" className="bg-color4 text-color1 px-4 py-2 rounded w-full">
+          <button type="submit" className="bg-color6 text-color1 px-4 py-2 rounded w-full">
             {isEditing ? "Actualizar" : "Agregar"}
           </button>
         </form>
       </div>
   
       {/* Tabla */}
-      <div className="mt-[-339px] ml-8 w-100">
+      <div className="w-full lg:w-auto mt-4 lg:mt-[1.6rem] lg:ml-8 overflow-x-auto">
         <table className="min-w-full bg-color1">
           <thead>
             <tr>
@@ -297,7 +297,8 @@ const SegurosCRUD = () => {
         </div>
       )}
     </div>
-  );  
+  );
+    
   
 };
 
