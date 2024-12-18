@@ -1112,9 +1112,7 @@
 }
 
 @media (width: 1024px) and (min-height: 1366px) {
-  .login-page {
-    /* outline: 1px solid red;*/
-   }
+  
  
    .formLogin, .formDos {
     width: 150%;
@@ -1194,7 +1192,7 @@
   height: 158%;
   position: relative;
   top: 46%;
-  left: 43%;
+  left: 58%;
   padding-top:19%;
   padding-right: 5%;
   margin-top: -21%;
@@ -1222,7 +1220,7 @@
   /* outline: 1px solid rgb(255, 0, 234);*/
 }
 .consola {
-  top: 7%;
+  top: -4%;
   left: 5%;
   border-radius: 14%;
 }
@@ -1246,9 +1244,7 @@
 @media (min-width: 1920px) and (max-width: 1535px) {
   /* Estilos para laptops pequeñas */
 
-  .login-page {
-     outline: 1px solid rgb(238, 255, 0);
-   }
+  
  
  .formLogin, .formDos {
    width: 150%;
