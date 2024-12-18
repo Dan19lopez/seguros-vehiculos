@@ -24,21 +24,15 @@ const handleClick =()=>{
       </header>
 
       {/* Sección principal */}
-<section className="hero-section">
-  <div className="video-background">
-  <iframe width="560"
-   height="315" 
-   src="https://www.youtube.com/embed/8FpXGOd_8u4?si=U1MbF_kioGSBXd8h" 
-   title="YouTube video player"
-    frameborder="0"
-     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
-  <div className="hero-overlay">
-    <h1>¡Asegura tu auto!</h1>
-    <p>Protege tu vehículo con nosotros, porque tu tranquilidad es nuestra prioridad.</p>
-  </div>
-</section>
+      <section className="hero-section">
+        <div className="video-background">
+          
+        </div>
+        <div className="hero-overlay">
+          <h1>¡Asegura tu auto!</h1>
+          <p>Protege tu vehículo con nosotros, porque tu tranquilidad es nuestra prioridad.</p>
+        </div>
+      </section>
 
       {/* Sección de Estadísticas */}
       <section className="stats-section">

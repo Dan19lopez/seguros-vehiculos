@@ -23,6 +23,12 @@
       "correo": "asd@gmai.com.co",
       "cedula": "111111111111",
       "contrasena": "123456"
+    },
+    {
+      "id": "c893",
+      "correo": "asdf@gmail.com",
+      "cedula": "71776000",
+      "contrasena": "98765"
     }
   ]
 }
