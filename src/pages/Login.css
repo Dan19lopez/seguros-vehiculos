@@ -710,7 +710,7 @@
    /* outline: 1px solid rgb(0, 255, 21);*/
   }
 
-.formLogin, .formDos {
+.formLogin{
   width: 108%;
   max-width: 450px;
   height: 132%;
