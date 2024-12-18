@@ -1,7 +1,7 @@
 import "../pages/Login.css"
 import StartStopButton from "./StarEngine";
 
-function FormularioDos({setCedula, cedula, setContrasena, contrasena, setCorreo, correo}) {
+function FormularioDos({setCedula, cedula, setContrasena, contrasena, setCorreo, correo, handlerEnviar}) {
   return (
     <div className="formularioDos">
 
@@ -45,7 +45,7 @@ function FormularioDos({setCedula, cedula, setContrasena, contrasena, setCorreo,
             onChange={(e) => setContrasena(e.target.value)} // Actualiza el estado de la contraseña
           />
         </div>
-        <StartStopButton />
+        <StartStopButton onClick={handlerEnviar} />
       </form>
     </div>
   );

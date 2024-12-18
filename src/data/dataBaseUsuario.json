@@ -3,12 +3,26 @@
     {
       "contrasena": "1234",
       "cedula": "1233566214",
-      "correo": "miguelherrera@gmail.com"
+      "correo": "miguelherrera@gmail.com",
+      "id": "a118"
     },
     {
       "contrasena": "5678",
       "cedula": "9876543210",
-      "correo": "lauragomez@gmail.com"
+      "correo": "lauragomez@gmail.com",
+      "id": "e36f"
+    },
+    {
+      "id": "b322",
+      "contrasena": "566578",
+      "cedula": "9876543aaaa210",
+      "correo": "lauragomeztorba@gmail.com"
+    },
+    {
+      "id": "3a7e",
+      "correo": "asd@gmai.com.co",
+      "cedula": "111111111111",
+      "contrasena": "123456"
     }
   ]
 }
