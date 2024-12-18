@@ -157,127 +157,148 @@ const SegurosCRUD = () => {
   }
 
   return (
-    <div className="usuarios-crud">
-      <h1>Gestión de Usuarios</h1>
-
-      {/* Formulario */}
-      <form onSubmit={isEditing ? handleUpdate : handleAdd}>
-        <input
-          type="text"
-          name="nombre"
-          placeholder="Nombre"
-          value={formData.nombre}
-          onChange={handleChange}
-          maxLength= "50"
-          minLength= "1"
-          required
-        />
-        <input
-          type="email"
-          name="correo"
-          placeholder="Correo"
-          value={formData.correo}
-          onChange={handleChange}
-          maxLength= "50"
-          minLength= "15"
-          required
-        />
-        <input
-          type="tel"
-          name="telefono"
-          placeholder="Teléfono"
-          value={formData.telefono}
-          onChange={handleChange}
-          maxLength= "20"
-          minLength= "7"
-          required
-        />
-        <input
-          type="text"
-          name="cedula"
-          placeholder="Cédula"
-          value={formData.cedula}
-          onChange={handleChange}
-          maxLength= "50"
-          minLength= "5"
-          required
-        />
-        <input
-          type="password"
-          name="contrasena"
-          placeholder="Contraseña"
-          value={formData.contrasena}
-          onChange={handleChange}
-          maxLength= "20"
-          minLength= "1"
-          required
-        />
-        <input
-          type="date"
-          name="fecha_nacimiento"
-          value={formData.fecha_nacimiento}
-          onChange={handleChange}
-          required
-        />
-        <label>
-          Activo:
+    <div className="usuarios-crud bg-color1 p-8 font-primary flex justify-center items-center min-h-screen">
+      <div className="w-full max-w-md">
+        <h1 className="text-2xl font-bold text-color7 mb-4 text-center">Gestión de Usuarios</h1>
+  
+        {/* Formulario */}
+        <form onSubmit={isEditing ? handleUpdate : handleAdd} className="space-y-4">
           <input
-            type="checkbox"
-            name="activo"
-            
+            type="text"
+            name="nombre"
+            placeholder="Nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            maxLength="50"
+            minLength="1"
+            required
+            className="w-full p-2 border border-color3 rounded"
           />
-        </label>
-        <button type="submit">{isEditing ? "Actualizar" : "Agregar"}</button>
-      </form>
-
+          <input
+            type="email"
+            name="correo"
+            placeholder="Correo"
+            value={formData.correo}
+            onChange={handleChange}
+            maxLength="50"
+            minLength="15"
+            required
+            className="w-full p-2 border border-color3 rounded"
+          />
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="Teléfono"
+            value={formData.telefono}
+            onChange={handleChange}
+            maxLength="20"
+            minLength="7"
+            required
+            className="w-full p-2 border border-color3 rounded"
+          />
+          <input
+            type="text"
+            name="cedula"
+            placeholder="Cédula"
+            value={formData.cedula}
+            onChange={handleChange}
+            maxLength="50"
+            minLength="5"
+            required
+            className="w-full p-2 border border-color3 rounded"
+          />
+          <input
+            type="password"
+            name="contrasena"
+            placeholder="Contraseña"
+            value={formData.contrasena}
+            onChange={handleChange}
+            maxLength="20"
+            minLength="1"
+            required
+            className="w-full p-2 border border-color3 rounded"
+          />
+          <input
+            type="date"
+            name="fecha_nacimiento"
+            value={formData.fecha_nacimiento}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border border-color3 rounded"
+          />
+          <label className="flex items-center space-x-2">
+            <span>Activo:</span>
+            <input
+              type="checkbox"
+              name="activo"
+              className="form-checkbox h-5 w-5 text-color4"
+            />
+          </label>
+          <button type="submit" className="bg-color4 text-color1 px-4 py-2 rounded w-full">
+            {isEditing ? "Actualizar" : "Agregar"}
+          </button>
+        </form>
+      </div>
+  
       {/* Tabla */}
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
-            <th>Cédula</th>
-            <th>Contraseña</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Activo</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {usuarios.map((usuario) => (
-            <tr key={usuario.id}>
-              <td>{usuario.nombre}</td>
-              <td>{usuario.correo}</td>
-              <td>{usuario.telefono}</td>
-              <td>{usuario.cedula}</td>
-              <td>{usuario.contrasena}</td>
-              <td>{usuario.fecha_nacimiento}</td>
-              <td>{usuario.activo === true ? "Sí" : "No"}</td>
-              <td>
-                <button onClick={() => handleEdit(usuario)}>Editar</button>
-                <button onClick={() => handleDelete(usuario)}>Eliminar</button>
-              </td>
+      <div className="mt-[-339px] ml-8 w-100">
+        <table className="min-w-full bg-color1">
+          <thead>
+            <tr>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Nombre</th>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Correo</th>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Teléfono</th>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Cédula</th>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Contraseña</th>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Fecha de Nacimiento</th>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Activo</th>
+              <th className="border-b-2 border-color3 px-4 py-2 text-left">Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-
+          </thead>
+          <tbody>
+            {usuarios.map((usuario) => (
+              <tr key={usuario.id}>
+                <td className="border-b border-color2 px-4 py-2">{usuario.nombre}</td>
+                <td className="border-b border-color2 px-4 py-2">{usuario.correo}</td>
+                <td className="border-b border-color2 px-4 py-2">{usuario.telefono}</td>
+                <td className="border-b border-color2 px-4 py-2">{usuario.cedula}</td>
+                <td className="border-b border-color2 px-4 py-2">{usuario.contrasena}</td>
+                <td className="border-b border-color2 px-4 py-2">{usuario.fecha_nacimiento}</td>
+                <td className="border-b border-color2 px-4 py-2">{usuario.activo ? "Sí" : "No"}</td>
+                <td className="border-b border-color2 px-4 py-2">
+                  <button onClick={() => handleEdit(usuario)} className="bg-color5 text-color1 px-2 py-1 rounded mr-2">
+                    Editar
+                  </button>
+                  <button onClick={() => handleDelete(usuario)} className="bg-color6 text-color1 px-2 py-1 rounded">
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+  
       {/* Modal de Confirmación */}
       {showModal && (
-        <div className="modal-backdrop">
-          <div className="modal">
-            <h2>¿Estás seguro?</h2>
-            <p>¿Quieres eliminar a {userToDelete?.nombre}?</p>
-            <div className="modal-buttons">
-              <button onClick={() => handleConfirmDelete(userToDelete.id)}>Sí</button>
-              <button onClick={() => setShowModal(false)}>No</button>
+        <div className="modal-backdrop fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center">
+          <div className="modal bg-color1 p-8 rounded shadow-lg">
+            <h2 className="text-xl font-bold text-color7">¿Estás seguro?</h2>
+            <p className="my-4">¿Quieres eliminar a {userToDelete?.nombre}?</p>
+            <div className="modal-buttons flex justify-end space-x-4">
+              <button onClick={() => handleConfirmDelete(userToDelete.id)} className="bg-color5 text-color1 px-4 py-2 rounded">
+                Sí
+              </button>
+              <button onClick={() => setShowModal(false)} className="bg-color6 text-color1 px-4 py-2 rounded">
+                No
+              </button>
             </div>
           </div>
         </div>
       )}
     </div>
-  );
+  );  
+  
 };
 
 export default SegurosCRUD;
