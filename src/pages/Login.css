@@ -60,23 +60,14 @@
   height: 90vh;
   margin-left: auto;
   margin-right: auto;
-  /*width: 1080px;*/
-  /*height: 700px;*/
-  /*margin-left: 10px;*/
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: end;
   text-align: center;
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
   z-index: 0;
-  /*border: red solid 1px;*/
-
-
-}
-
-.modalIniciarSesion {
   /*background-color: var(--color-7);*/
   /* background-color: var(--color-1);*/
   background-image: url('../img/nuevologinsinconsola.jpg');
@@ -84,9 +75,6 @@
   background-repeat: no-repeat;
   background-position-x: 0;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
 }
 
 
@@ -139,7 +127,7 @@
 
 
 
-.formulario,
+/*.formulario,*/
 .formularioDos {
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
   background: rgba(255, 255, 255, 0.05);
@@ -244,6 +232,24 @@
 .btn2:hover {
   background-color: var(--color-4);
 }
+.consola{
+  /*451 470 96 2*/
+  width: 100%;
+  height: 248px;
+  background-image:url('../img/consola.png');
+  z-index: 1;
+  /*background-position-x:-736px;*/
+  background-position-y: -210px;
+  background-position-x: -35px ;
+  background-size: 450px 450px;
+  background-repeat: no-repeat;
+  /*border: red solid 1px;*/
+  position:relative;
+  border-radius: 14%;
+  top: 7%;
+  left: 5%;
+
+}
 
 /*.btn:hover {
   background-color: var(--color-3);
@@ -340,7 +346,7 @@
 }
 
 .closeButton {
-  width: 120px;
+  width: 150px;
   height: 50px;
   background-color: var(--color-7);
   /* Color de fondo rojo para que sea evidente */
@@ -394,3 +400,184 @@
   gap: 15px;
 
 }
+
+
+/*Diseño Responsivo*/
+
+
+
+/* Teléfonos pequeños */
+@media (min-width: 320px) and (max-width: 359px) {
+  /* Estilos para teléfonos pequeños */
+}
+
+/* Teléfonos estándar */
+@media (min-width: 360px) and (max-width: 389px) {
+  /* Estilos para teléfonos estándar */
+}
+
+@media (min-width: 390px) and (max-width: 411px) {
+  /* Estilos para dispositivos con 390px */
+}
+
+@media (min-width: 412px) and (max-width: 539px) {
+  /* Estilos para dispositivos con 412px */
+}
+
+/* Phablets o teléfonos grandes */
+@media (min-width: 540px) and (max-width: 599px) {
+  /* Estilos para phablets */
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  /* Estilos para phablets o teléfonos grandes */
+}
+
+/* Tablets en orientación vertical y teléfonos grandes */
+@media (min-width: 768px) and (max-width: 911px) {
+  /* Estilos para tablets en vertical */
+}
+
+@media (min-width: 912px) and (max-width: 991px) {
+  /* Estilos para tablets grandes o teléfonos muy grandes */
+}
+
+/* Tablets en orientación horizontal */
+@media (min-width: 992px) and (max-width: 1023px) {
+  /* Estilos para tablets en horizontal */
+}
+
+/* Pantallas grandes (desktop) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .login-page {
+    outline: 1px solid red;
+  }
+
+.formLogin, .formDos {
+  width: 150%;
+  max-width: 450px;
+  height: 199%;
+  position: relative;
+  top: 13%;
+  left: 26%;
+  padding-top:19%;
+  padding-right: 5%;
+  margin-top: -21%;
+  margin-left: -15%;
+  border-radius: 5%;
+  /*outline: 1px solid rgb(0, 208, 255);*/
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+ 
+}
+.contenidoInput {
+  padding-right: 5%;
+  padding-bottom: 2%;
+  margin-top: 25px;
+  margin-left: 10%;
+  height: 30px;
+  width:100%;
+  border-top: 0;
+  position: relative;
+  left: -55px;
+  top: -65px;
+  /* outline: 1px solid rgb(255, 0, 234);*/
+}
+.consola {
+  top: 1%;
+  left: 5%;
+  border-radius: 9%;
+}
+
+.abajoLogin {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  /*outline: 3px solid rgb(255, 0, 217);*/
+}
+
+}
+
+/* Pantallas extra grandes */
+@media (min-width: 1280px) and (max-width: 1365px) {
+  /* Estilos para pantallas extra grandes */
+   /* Estilos para pantallas extra grandes */
+   .login-page {
+    outline: 1px solid rgb(238, 255, 0);
+  }
+
+.formLogin, .formDos {
+  width: 150%;
+  max-width: 450px;
+  height: 158%;
+  position: relative;
+  top: 46%;
+  left: 43%;
+  padding-top:19%;
+  padding-right: 5%;
+  margin-top: -21%;
+  margin-left: -15%;
+  border-radius: 5%;
+  /*outline: 1px solid rgb(0, 208, 255);*/
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+ 
+}
+.contenidoInput {
+  padding-right: 5%;
+  padding-bottom: 2%;
+  margin-top: 25px;
+  margin-left: 10%;
+  height: 30px;
+  width:100%;
+  border-top: 0;
+  position: relative;
+  left: -55px;
+  top: -65px;
+  /* outline: 1px solid rgb(255, 0, 234);*/
+}
+.consola {
+  top: 7%;
+  left: 5%;
+  border-radius: 14%;
+}
+
+.abajoLogin {
+  display: flex;
+      flex-direction: row;
+  justify-content: flex-start;
+
+  /*outline: 3px solid rgb(255, 0, 217);*/
+}
+}
+
+/* Laptops pequeñas o pantallas estándar */
+@media (min-width: 1366px) and (max-width: 1535px) {
+  /* Estilos para laptops pequeñas */
+  .abajoLogin {
+ 
+    justify-content: flex-start;
+  
+    /*outline: 3px solid rgb(255, 0, 217);*/
+  }
+}
+
+/* Pantallas ultra grandes */
+@media (min-width: 1536px) {
+  /* Estilos para pantallas ultra grandes */
+}
+
+
+
+
+

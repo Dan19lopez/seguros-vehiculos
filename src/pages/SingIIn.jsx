@@ -68,17 +68,17 @@ function SingIIn() {
     <div className="signiin-page">
 
       <div className="containerHeader">
-        <h3 className="tituloLogin">Crea una cuenta</h3>
+        <h3 className="tituloSingin">Crea una cuenta</h3>
       </div>
 
-      <div className="modalIniciarSesion">
+      <div className="modalSingin">
 
-        <div className="arribaLogin">
-          <p className="parrafoLogin">Bienvenido de nuevo! Estás a un paso de proteger tu auto con el mejor seguro.</p>
+        <div className="arribaSingin">
+          <p className="parrafoSingin">Bienvenido de nuevo! Estás a un paso de proteger tu auto con el mejor seguro.</p>
           <BotonCerrar />
         </div>
 
-        <div className="centroLogin">
+        <div className="centroSingin">
           <div className="ladoIzquiero"></div>
           <FormularioDos setCorreo={setCorreo}
             setContrasena={setContrasena}
@@ -86,7 +86,7 @@ function SingIIn() {
             handlerEnviar={handleSubmit} />
         </div>
 
-        <div className="abajoLogin">
+        <div className="abajoSingin">
           <SingIn className="" />
         </div>
       </div>
