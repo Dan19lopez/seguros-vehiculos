@@ -153,7 +153,8 @@
 
 .formDos,
 .formLogin {
-  border: red solid 1px;
+ /* border: red solid 1px;*/
+
 }
 
 .formularioDos {
@@ -513,12 +514,220 @@
 
 
 /* Teléfonos estándar */
-@media (min-width: 360px) and (max-width: 389px) {
+@media (min-width: 360px) and (max-width: 370px) {
   /* Estilos para teléfonos estándar */
+  .login-page {
+    /* outline: 1px solid rgb(0, 255, 21);*/
+   }
+ 
+   .formLogin, .formDos {
+    width: 100%;
+    max-width: 450px;
+    height: 148%;
+    position: relative;
+    top: 11%;
+    left: 7%;
+    padding-top: 15%;
+    padding-right: 5%;
+    margin-top: -21%;
+    margin-left: -7%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+  top: -4%;
+  left: 6%;
+  border-radius: 9%;
+}
+ 
+ .abajoLogin {
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+ 
+   /*outline: 3px solid rgb(255, 0, 217);*/
+ }
+ .arribaLogin {
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   flex-direction: column;
+   /* outline: 3px solid rgb(26, 255, 0); */
+   justify-content: space-evenly;
+   align-items: center;
+   gap: 18px;
+ }
+ .button-container {
+  position: absolute;
+  top: 35px;
+  left: 45px;
+}
+ 
+}
+@media (min-width: 375px) and (max-width: 389px) {
+   /* Estilos para teléfonos estándar */
+   .login-page {
+    /* outline: 1px solid rgb(0, 255, 21);*/
+   }
+ 
+   .formLogin, .formDos {
+    width: 100%;
+    max-width: 450px;
+    height: 151%;
+    position: relative;
+    top: 11%;
+    left: 7%;
+    padding-top: 4%;
+    padding-right: 5%;
+    margin-top: -21%;
+    margin-left: -7%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+  top: -4%;
+  left: 6%;
+  border-radius: 9%;
+}
+ 
+ .abajoLogin {
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+ 
+   /*outline: 3px solid rgb(255, 0, 217);*/
+ }
+ .arribaLogin {
+  width: 100%;
+  height: 10vh;
+  display: flex
+;
+  flex-direction: column;
+  /* outline: 3px solid rgb(26, 255, 0); */
+  justify-content: flex-start;
+  gap: 0px;
+  align-content: stretch;
+}
+.button-container {
+  position: absolute;
+  top: 33px;
+  left: 41px;
+}
+
 }
 
 @media (min-width: 390px) and (max-width: 411px) {
   /* Estilos para dispositivos con 390px */
+   /* Estilos para teléfonos estándar */
+   .login-page {
+    /* outline: 1px solid rgb(0, 255, 21);*/
+   }
+ 
+   .formLogin, .formDos {
+    width: 100%;
+    max-width: 450px;
+    height: 148%;
+    position: relative;
+    top: 11%;
+    left: 7%;
+    padding-top: 15%;
+    padding-right: 5%;
+    margin-top: -21%;
+    margin-left: -7%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+  top: 10%;
+  left: 6%;
+  border-radius: -2%;
+}
+ 
+ .abajoLogin {
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+ 
+   /*outline: 3px solid rgb(255, 0, 217);*/
+ }
+ .arribaLogin {
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   flex-direction: column;
+   /* outline: 3px solid rgb(26, 255, 0); */
+   justify-content: space-evenly;
+   align-items: center;
+   gap: 18px;
+ }
+ .button-container {
+  position: absolute;
+  top: 35px;
+  left: 37px;
+}
 }
 
 @media (min-width: 412px) and (max-width: 539px) {
@@ -561,7 +770,7 @@
   /* outline: 1px solid rgb(255, 0, 234);*/
 }
 .consola {
-  top: 1%;
+  top: 5%;
   left: 5%;
   border-radius: 9%;
 }
@@ -597,6 +806,73 @@
 /* Phablets o teléfonos grandes */
 @media (min-width: 540px) and (max-width: 599px) {
   /* Estilos para phablets */
+  .login-page {
+    /* outline: 1px solid rgb(0, 255, 21);*/
+   }
+ 
+   .formLogin, .formDos {
+    width: 108%;
+    max-width: 450px;
+    height: 149%;
+    position: relative;
+    top: 13%;
+    left: -6%;
+    padding-top: 7%;
+    padding-right: 5%;
+    margin-top: -21%;
+    margin-left: -7%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+   top: 1%;
+   left: 5%;
+   border-radius: 9%;
+ }
+ 
+ .abajoLogin {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* outline: 3px solid rgb(255, 0, 217); */
+}
+ .arribaLogin {
+   width: 100%;
+   height: 10vh;
+   display: flex
+ ;
+   flex-direction: column;
+   /* outline: 3px solid rgb(26, 255, 0); */
+   justify-content: space-evenly;
+   align-items: center;
+   gap: 18px;
+ }
+ .button-container {
+   position: absolute;
+   top: 35px;
+   left: 22px;
+ }
 }
 
 @media (min-width: 600px) and (max-width: 767px) {
@@ -604,7 +880,7 @@
 }
 
 /* Tablets en orientación vertical y teléfonos grandes */
-@media (min-width: 768px) and (max-width: 911px) {
+@media (min-width: 768px) and (max-width: 819px) {
   /* Estilos para tablets en vertical */
   .arribaLogin {
     width: 100%;
@@ -629,7 +905,55 @@
 .formLogin, .formDos {
   width: 110%;
   max-width: 450px;
-  height: 108%;
+  height: 135%;
+  position: relative;
+  top: 10%;
+  left: -15%;
+  padding-top: 19%;
+  padding-right: 4%;
+  margin-top: -21%;
+  margin-left: -15%;
+  border-radius: 5%;
+  /* outline: 1px solid rgb(0, 208, 255); */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.button-container {
+  position: absolute;
+  top: 35px;
+  left: 3px;
+}
+}
+
+@media (min-width: 820px) and (max-width: 911px) {
+  /* Estilos para tablets en vertical */
+  .arribaLogin {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 18px;
+}
+.contenidoInput {
+  padding: 25px;
+  margin-top: 25px;
+  height: 30px;
+  border-top: 0;
+  /* margin: 0; */
+  position: relative;
+  left: -4px;
+  top: -30px;
+}
+  
+.formLogin, .formDos {
+  width: 110%;
+  max-width: 450px;
+  height: 117%;
   position: relative;
   top: 28%;
   left: -15%;
@@ -645,11 +969,76 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+.button-container {
+  position: absolute;
+  top: 35px;
+  left: 3px;
+}
 }
 
 
 @media (min-width: 912px) and (max-width: 991px) {
   /* Estilos para tablets grandes o teléfonos muy grandes */
+  .arribaLogin {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    /* outline: 3px solid rgb(26, 255, 0); */
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 18px;
+}
+.formLogin, .formDos {
+  width: 150%;
+  max-width: 450px;
+  height: 117%;
+  position: relative;
+  top: 65%;
+  left: 37%;
+  padding-top: 23%;
+  padding-right: 5%;
+  margin-top: -92%;
+  margin-left: -80%;
+  border-radius: 5%;
+  /* outline: 1px solid rgb(0, 208, 255); */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.consola {
+  width: 100%;
+  height: 248px;
+  background-image: url(/src/img/consola.png);
+  z-index: 1;
+  /* background-position-x: -736px; */
+  background-position-y: -210px;
+  background-position-x: -35px;
+  background-size: 450px 450px;
+  background-repeat: no-repeat;
+  /* border: red solid 1px; */
+  position: relative;
+  border-radius: 14%;
+  top: 20%;
+  left: 5%;
+}
+.contenidoInput {
+  padding: 25px;
+  margin-top: 25px;
+  height: 30px;
+  border-top: 0;
+  /* margin: 0; */
+  position: relative;
+  left: 0px;
+  top: -30px;
+}
+.button-container {
+  position: absolute;
+  top: 33px;
+  left: -17px;
+}
 }
   
 
@@ -658,6 +1047,7 @@
   /* Estilos para tablets en horizontal */
   
 }
+
 
 /* Pantallas grandes (desktop) */
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -721,12 +1111,81 @@
 }
 }
 
+@media (width: 1024px) and (min-height: 1366px) {
+  .login-page {
+    /* outline: 1px solid red;*/
+   }
+ 
+   .formLogin, .formDos {
+    width: 150%;
+    max-width: 450px;
+    height: 113%;
+    position: relative;
+    top: 13%;
+    left: -43%;
+    padding-top: 19%;
+    padding-right: 5%;
+    margin-top: -21%;
+    margin-left: -15%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+  top: 28%;
+  left: 5%;
+  border-radius: 14%;
+}
+ 
+ .abajoLogin {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* outline: 3px solid rgb(255, 0, 217); */
+}
+ .button-container {
+   position: absolute;
+   top: 35px;
+   left: -20px;
+ }
+ .arribaLogin {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  /* outline: 3px solid rgb(26, 255, 0); */
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 18px;
+}
+}
+
 /* Pantallas extra grandes */
-@media (min-width: 1280px) and (max-width: 1365px) {
+@media (min-width: 1280px) and (max-width: 1919px) {
   /* Estilos para pantallas extra grandes */
    /* Estilos para pantallas extra grandes */
    .login-page {
-    outline: 1px solid rgb(238, 255, 0);
+   /* outline: 1px solid rgb(238, 255, 0);*/
   }
 
 .formLogin, .formDos {
@@ -784,19 +1243,128 @@
 }
 
 /* Laptops pequeñas o pantallas estándar */
-@media (min-width: 1366px) and (max-width: 1535px) {
+@media (min-width: 1920px) and (max-width: 1535px) {
   /* Estilos para laptops pequeñas */
-  .abajoLogin {
+
+  .login-page {
+     outline: 1px solid rgb(238, 255, 0);
+   }
  
-    justify-content: flex-start;
+ .formLogin, .formDos {
+   width: 150%;
+   max-width: 450px;
+   height: 158%;
+   position: relative;
+   top: 46%;
+   left: 43%;
+   padding-top:19%;
+   padding-right: 5%;
+   margin-top: -21%;
+   margin-left: -15%;
+   border-radius: 5%;
+   /*outline: 1px solid rgb(0, 208, 255);*/
+   background: rgba(255, 255, 255, 0.05);
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(25px);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.3);
   
-    /*outline: 3px solid rgb(255, 0, 217);*/
-  }
+ }
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+  top: 34%;
+  left: 5%;
+  border-radius: 14%;
+}
+ 
+ .abajoLogin {
+   display: flex;
+       flex-direction: row;
+   justify-content: flex-start;
+ 
+   /*outline: 3px solid rgb(255, 0, 217);*/
+  
+ }
+ .button-container {
+   position: absolute;
+   top: 35px;
+   left: -20px;
+ }
+ 
 }
 
 /* Pantallas ultra grandes */
 @media (min-width: 1536px) {
+
   /* Estilos para pantallas ultra grandes */
+  .login-page {
+    /* outline: 1px solid rgb(238, 255, 0);*/
+   }
+ 
+   .formLogin, .formDos {
+    width: 150%;
+    max-width: 450px;
+    height: 126%;
+    position: relative;
+    top: 72%;
+    left: 85%;
+    padding-top: 19%;
+    padding-right: 5%;
+    margin-top: -21%;
+    margin-left: -15%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ .contenidoInput {
+   padding-right: 5%;
+   padding-bottom: 2%;
+   margin-top: 25px;
+   margin-left: 10%;
+   height: 30px;
+   width:100%;
+   border-top: 0;
+   position: relative;
+   left: -55px;
+   top: -65px;
+   /* outline: 1px solid rgb(255, 0, 234);*/
+ }
+ .consola {
+   top: 15%;
+   left: 5%;
+   border-radius: 14%;
+ }
+ 
+ .abajoLogin {
+   display: flex;
+       flex-direction: row;
+   justify-content: flex-start;
+ 
+   /*outline: 3px solid rgb(255, 0, 217);*/
+  
+ }
+ .button-container {
+   position: absolute;
+   top: 35px;
+   left: -20px;
+ }
+ 
 }
 
 
