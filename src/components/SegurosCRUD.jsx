@@ -1,159 +1,102 @@
-import React, { useState, useEffect } from "react";
+
 /*{import './SegurosCRUD.css';}*/
 
+import { useState } from "react";
+import { useEffect } from "react";
+
 const SegurosCRUD = () => {
-  const [usuarios, setUsuarios] = useState([]);
-  const [userData, setUserData] = useState([]);
-  const [formData, setFormData] = useState({
-    id: "",
-    nombre: "",
-    correo: "",
-    telefono: "",
-    cedula: "",
-    contrasena: "",
-    fecha_nacimiento: "",
-    activo: 0,
-  });
-  const [isEditing, setIsEditing] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [userToDelete, setUserToDelete] = useState(null);
-  const [userRead, setUserRead] = useState([]);
 
-  useEffect(() => {
-    const fetchUsuarios = async () => {
-        const response = await fetch("http://localhost:8080/api/usuario");
-        const data = await response.json();
-        setUserRead(data);
-      
-        
-    };
+  //estado 
+  const [usuarios, setUsuarios] = useState([])
+  const [usuarioAgregado, setUsuarioAgregado] = useState({})
+  const [usuarioEditado, setUsuarioEditado] = useState(false)
 
-    fetchUsuarios();
-  }, []);
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? (checked ? true : false) : value,
-    });
-  };
+  // Hook para leer la base de datos (get)
+  useEffect(()=>{
 
-  const generateNewId = () => {
-    if (usuarios.length === 0) return 1;
-    return Math.max(...usuarios.map((usuario) => usuario.id)) + 1;
-  };
+    const fetchUsers = async()=>{
+      const response = await fetch("http://localhost:8080/api/usuario")
+      const data = await response.json()
+      setUsuarios(data  )
+      console.log(data)
+    }
 
-  const handleAdd = async (e) => {
-    e.preventDefault();
-    const newUser = { ...formData, id: generateNewId() };
-    const id = e.target.id.value
+    fetchUsers()
+// se agrega la dependencia del use effect para que pueda sensar que cambia cuando se agrega un nuevo usuario desde la peticion del post.
+  },[usuarioAgregado])
+
+  const agregarUsuario = async(e)=>{
+
+    //para prevenir el comportamiento por defecto de recargar la p'agina
+    e.preventDefault()
+    
+    //Asignación de los datos que se caprutan desde el form a variables para su manipulación
     const nombre = e.target.nombre.value
     const correo = e.target.correo.value
     const telefono = e.target.telefono.value
     const cedula = e.target.cedula.value
     const contrasena = e.target.contrasena.value
-    const fecha = e.target.fecha_nacimiento.value 
-    const activo = e.target.activo.checked
-    const dataObject = {id,nombre,correo,telefono,cedula,contrasena,fecha,activo}
+    const fecha_nacimiento = e.target.fecha_nacimiento.value
+    const activo = true
 
-    setUserData(dataObject)
-    try {
-      const response = await fetch("http://localhost:8080/api/usuario", {
-        method: "POST",
+    console.log(fecha_nacimiento)
+//////////POST
+    const response = await fetch("http://localhost:8080/api/usuario", {
+      //estructura basica del metodo post
+      method: "POST",
+     
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(dataObject),
-      });
+        //conversión del objeto json a string
+        body: JSON.stringify({nombre, correo, telefono, cedula, contrasena, fecha_nacimiento, activo})
+      
+    })
+    const responseData = await response.json()
+    setUsuarioAgregado(responseData)
 
-      if (response.ok) {
-        const newUser = await response.json();
-        setUsuarios([...usuarios, newUser]);
-        setFormData({
-          id: "",
-          nombre: "",
-          correo: "",
-          telefono: "",
-          cedula: "",
-          contrasena: "",
-          fecha_nacimiento: "",
-          activo: true,
-        });
-      } else {
-        console.error("Error al crear el usuario:", response.status);
-      }
-    } catch (error) {
-      console.error("Error al realizar la solicitud:", error);
-    }
-  };
 
-  const handleEdit = (usuario) => {
-    setFormData(usuario);
-    setIsEditing(true);
-  };
-
-  const handleUpdate = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch (`http://localhost:8080/api/usuario/${formData.id}`,{
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if(response.ok){
-    setUsuarios(
-      usuarios.map((usuario) => 
-      usuario.id === formData.id ? formData : usuario
-    )
-    );
-    setFormData({
-      id: "",
-      nombre: "",
-      correo: "",
-      telefono: "",
-      cedula: "",
-      contrasena: "",
-      fecha_nacimiento: "",
-      activo: false,
-    });
-    setIsEditing(false);
-    }
-  } catch (erro) {
-    console.error("Error cambiando usuario:", error);
-  }
-};
-
+//////////GET by id
+//const bucarUsuarioPorId = async(id)=>{
+ // fetch("localhost:8080/api/usuario/{id}")
   
-  const handleConfirmDelete = async (id) => {
-    try {
-      const response = await fetch(`http://localhost:8080/api/usuario/${id}`, {
-        method: "DELETE",
-      });
-      if (response.ok) {
-    setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
-    setShowModal(false);
-    }
-    } catch (error) {
-      console.error("Error eliminando usuario:", error);
-    }
-  };
+ // }
+////////////PUT
+async function editarUsuario(id){
+  setUsuarioEditado(true)
+  const usuarioAEditar=usuarios.find(usuario => usuario.id === id);
+  setUsuarioEditado(usuarioAEditar);
+    //busco usuario con id que coincidan con la propiedad id 
+  const
+  
+  //se le asigna a setUsiarios el valor del primer usuario encontrado en el arreglo
+  setUsuarioEditado(usuarioAEditar[0])
 
-  const handleDelete = (usuario) => {
-    setUserToDelete(usuario);
-    setShowModal(true);
-  };
 
-  const [usuarioById,setUsuarioById]=useState([]);
-  const handleSearch = async(id) => {
 
-    const respuesta = await fetch (`http://localhost:8080/api/usuario/${id}`)
-    const respuestaConvertida=respuesta.json();
-    if (respuesta.ok) {
-      setUsuarioById(respuestaConvertida);
-    }
+const response = await fetch(`localhost:8080/api/usuario/${id}`, {
+  method: "PUT",
+  headers: {
+                'Content-Type': 'application/json',
+            },
+  body: JSON.stringify(usuarioAEditar[0])
+})
+const responseData = await response.json();
+}
+
+/////////DELETE
+//const eliminarUsuario = async(id)=>{
+ // fetch("localhost:8080/api/usuario/{id}")
+
+//}
+/////////PATCH
+//const inactivarUsuario = async(id)=>{
+ // fetch("localhost:8080/api/usuario/desactivar/{id}")
+
+
+//}
+
   }
 
   return (
@@ -162,13 +105,13 @@ const SegurosCRUD = () => {
         <h1 className="text-2xl font-bold text-color7 mb-4 text-center">Gestión de Usuarios</h1>
   
         {/* Formulario */}
-        <form onSubmit={isEditing ? handleUpdate : handleAdd} className="space-y-4">
+        <form onSubmit={agregarUsuario} className="space-y-4">
           <input
             type="text"
             name="nombre"
             placeholder="Nombre"
-            value={formData.nombre}
-            onChange={handleChange}
+            value={usuarioEditado ? usuarioEditado.nombre : ""}
+          
             maxLength="50"
             minLength="1"
             required
@@ -178,10 +121,10 @@ const SegurosCRUD = () => {
             type="email"
             name="correo"
             placeholder="Correo"
-            value={formData.correo}
-            onChange={handleChange}
+            
+          
             maxLength="50"
-            minLength="15"
+            minLength="1"
             required
             className="w-full p-2 border border-color3 rounded"
           />
@@ -189,10 +132,9 @@ const SegurosCRUD = () => {
             type="tel"
             name="telefono"
             placeholder="Teléfono"
-            value={formData.telefono}
-            onChange={handleChange}
+            
             maxLength="20"
-            minLength="7"
+            minLength="1"
             required
             className="w-full p-2 border border-color3 rounded"
           />
@@ -200,10 +142,9 @@ const SegurosCRUD = () => {
             type="text"
             name="cedula"
             placeholder="Cédula"
-            value={formData.cedula}
-            onChange={handleChange}
+            
             maxLength="50"
-            minLength="5"
+            minLength="1"
             required
             className="w-full p-2 border border-color3 rounded"
           />
@@ -211,8 +152,7 @@ const SegurosCRUD = () => {
             type="password"
             name="contrasena"
             placeholder="Contraseña"
-            value={formData.contrasena}
-            onChange={handleChange}
+            
             maxLength="20"
             minLength="1"
             required
@@ -221,8 +161,7 @@ const SegurosCRUD = () => {
           <input
             type="date"
             name="fecha_nacimiento"
-            value={formData.fecha_nacimiento}
-            onChange={handleChange}
+            
             required
             className="w-full p-2 border border-color3 rounded"
           />
@@ -235,7 +174,7 @@ const SegurosCRUD = () => {
             />
           </label>
           <button type="submit" className="bg-color6 text-color1 px-4 py-2 rounded w-full">
-            {isEditing ? "Actualizar" : "Agregar"}
+           Enviar
           </button>
         </form>
       </div>
@@ -256,46 +195,35 @@ const SegurosCRUD = () => {
             </tr>
           </thead>
           <tbody>
-            {usuarios.map((usuario) => (
-              <tr key={usuario.id}>
-                <td className="border-b border-color2 px-4 py-2">{usuario.nombre}</td>
-                <td className="border-b border-color2 px-4 py-2">{usuario.correo}</td>
-                <td className="border-b border-color2 px-4 py-2">{usuario.telefono}</td>
-                <td className="border-b border-color2 px-4 py-2">{usuario.cedula}</td>
-                <td className="border-b border-color2 px-4 py-2">{usuario.contrasena}</td>
-                <td className="border-b border-color2 px-4 py-2">{usuario.fecha_nacimiento}</td>
-                <td className="border-b border-color2 px-4 py-2">{usuario.activo ? "Sí" : "No"}</td>
-                <td className="border-b border-color2 px-4 py-2">
-                  <button onClick={() => handleEdit(usuario)} className="bg-color5 text-color1 px-2 py-1 rounded mr-2">
-                    Editar
-                  </button>
-                  <button onClick={() => handleDelete(usuario)} className="bg-color6 text-color1 px-2 py-1 rounded">
-                    Eliminar
-                  </button>
-                </td>
-              </tr>
-            ))}
+          {
+            
+            usuarios.map((usuario) => (
+                <tr key={usuario.id}>
+                  <td className="border-b border-color2 px-4 py-2">{usuario.nombre}</td>
+                  <td className="border-b border-color2 px-4 py-2">{usuario.correo}</td>
+                  <td className="border-b border-color2 px-4 py-2">{usuario.telefono}</td>
+                  <td className="border-b border-color2 px-4 py-2">{usuario.cedula}</td>
+                  <td className="border-b border-color2 px-4 py-2">{usuario.contrasena}</td>
+                  <td className="border-b border-color2 px-4 py-2">{usuario.fecha_nacimiento}</td>
+                  <td className="border-b border-color2 px-4 py-2">{usuario.activo ? "Sí" : "No"}</td>
+                  <td className="border-b border-color2 px-4 py-2">
+                    <button onClick={() => editarUsuario()} className="bg-color5 text-color1 px-2 py-1 rounded mr-2">
+                      Editar
+                    </button>
+                    <button onClick={() => handleDelete(usuario)} className="bg-color6 text-color1 px-2 py-1 rounded">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>))
+                }
           </tbody>
         </table>
+
+        
       </div>
   
       {/* Modal de Confirmación */}
-      {showModal && (
-        <div className="modal-backdrop fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center">
-          <div className="modal bg-color1 p-8 rounded shadow-lg">
-            <h2 className="text-xl font-bold text-color7">¿Estás seguro?</h2>
-            <p className="my-4">¿Quieres eliminar a {userToDelete?.nombre}?</p>
-            <div className="modal-buttons flex justify-end space-x-4">
-              <button onClick={() => handleConfirmDelete(userToDelete.id)} className="bg-color5 text-color1 px-4 py-2 rounded">
-                Sí
-              </button>
-              <button onClick={() => setShowModal(false)} className="bg-color6 text-color1 px-4 py-2 rounded">
-                No
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      
     </div>
   );
     
