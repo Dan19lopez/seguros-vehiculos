@@ -1,29 +1,35 @@
 import "../pages/Login.css"
 import StartStopButton from "./StarEngine";
 
-function FormularioDos() {
+function FormularioDos({setCedula, cedula, setContrasena, contrasena, setCorreo, correo}) {
   return (
     <div className="formularioDos">
 
       <form action="" className="formDos">
         <div className="contenidoInputB">
-          <label htmlFor="usuario">Doc Identidad</label>
+          <label htmlFor="cedula">Doc Identidad</label>
           <input
             type="text"
-            id="usuarioB"
+            id="cedula"
+            required
             placeholder="Cedula"
             className="inputA"
-          /*onChange={(e) => setCorreo(e.target.value)} // Actualiza el estado del correo*/
+            value={cedula}
+            name="cedula"
+            onChange={(e) => setCedula(e.target.value)} // Actualiza el estado del correo
           />
         </div>
         <div className="contenidoInputB">
-          <label htmlFor="usuario">E-mail</label>
+          <label htmlFor="email">E-mail</label>
           <input
             type="text"
-            id="usuarioB"
+            id="email"
+            required
             placeholder="Email"
             className="inputA"
-          /*onChange={(e) => setCorreo(e.target.value)} // Actualiza el estado del correo*/
+            name="correo"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)} // Actualiza el estado del correo
           />
         </div>
 
@@ -32,9 +38,11 @@ function FormularioDos() {
           <input
             type="password"
             id="contrasena"
+            required
             placeholder="Contraseña"
             className="inputA"
-            /*onChange={(e) => setContrasena(e.target.value)} // Actualiza el estado de la contraseña*/
+            value={contrasena}
+            onChange={(e) => setContrasena(e.target.value)} // Actualiza el estado de la contraseña
           />
         </div>
         <StartStopButton />
@@ -44,3 +52,5 @@ function FormularioDos() {
 
 }
 export default FormularioDos;
+
+/*  */

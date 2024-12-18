@@ -1,144 +1,14 @@
 {
   "usuarios": [
     {
-      "id": "1",
-      "nombre": "Michael Herrera",
       "contrasena": 1234,
-      "telefono": 3246720308,
       "cedula": "1233566214",
-      "correo": "miguelherrera@gmail.com",
-      "fecha_nacimiento": "1980-03-29",
-      "activo": 1
+      "correo": "miguelherrera@gmail.com"
     },
     {
-      "id": "2",
-      "nombre": "Laura Gomez",
       "contrasena": 5678,
-      "telefono": 3157628912,
       "cedula": "9876543210",
-      "correo": "lauragomez@gmail.com",
-      "fecha_nacimiento": "1992-07-15",
-      "activo": 1
-    },
-    {
-      "id": "3",
-      "nombre": "Juan Perez",
-      "contrasena": 9101,
-      "telefono": 3107528913,
-      "cedula": "1029384756",
-      "correo": "juanperez@hotmail.com",
-      "fecha_nacimiento": "1995-10-10",
-      "activo": 0
-    },
-    {
-      "id": "4",
-      "nombre": "Sofia Martinez",
-      "contrasena": 1123,
-      "telefono": 3224789102,
-      "cedula": "5647382910",
-      "correo": "sofiamartinez@yahoo.com",
-      "fecha_nacimiento": "1987-01-22",
-      "activo": 1
-    },
-    {
-      "id": "5",
-      "nombre": "Carlos Ramirez",
-      "contrasena": 3344,
-      "telefono": 3178901245,
-      "cedula": "6789102345",
-      "correo": "carlosramirez@gmail.com",
-      "fecha_nacimiento": "1983-12-03",
-      "activo": 1
-    },
-    {
-      "id": "6",
-      "nombre": "Ana Torres",
-      "contrasena": 4455,
-      "telefono": 3125698741,
-      "cedula": "1234598760",
-      "correo": "anatorres@hotmail.com",
-      "fecha_nacimiento": "1990-08-08",
-      "activo": 0
-    },
-    {
-      "id": "7",
-      "nombre": "Luis Mendoza",
-      "contrasena": 5566,
-      "telefono": 3204785691,
-      "cedula": "6789123450",
-      "correo": "luismendoza@gmail.com",
-      "fecha_nacimiento": "1985-11-25",
-      "activo": 1
-    },
-    {
-      "id": "8",
-      "nombre": "Maria Lopez",
-      "contrasena": 6677,
-      "telefono": 3167528910,
-      "cedula": "5678123490",
-      "correo": "marialopez@yahoo.com",
-      "fecha_nacimiento": "1994-02-14",
-      "activo": 1
-    },
-    {
-      "id": "9",
-      "nombre": "Diego Castro",
-      "contrasena": 7788,
-      "telefono": 3118792054,
-      "cedula": "7891234560",
-      "correo": "diegocastro@gmail.com",
-      "fecha_nacimiento": "1988-09-09",
-      "activo": 0
-    },
-    {
-      "id": "10",
-      "nombre": "Lucia Fernandez",
-      "contrasena": 8899,
-      "telefono": 3148927365,
-      "cedula": "9012345678",
-      "correo": "luciafernandez@gmail.com",
-      "fecha_nacimiento": "1991-04-30",
-      "activo": 1
-    },
-    {
-      "id": null,
-      "nombre": "Cristian ",
-      "correo": "maygo782@gmail.com",
-      "telefono": "34234243",
-      "cedula": "21432432",
-      "contrasena": "432432",
-      "fecha_nacimiento": "2024-12-12",
-      "activo": 1
-    },
-    {
-      "id": null,
-      "nombre": "Cristian ",
-      "correo": "maygo782@gmail.com",
-      "telefono": "756565",
-      "cedula": "32442354",
-      "contrasena": "erwrew",
-      "fecha_nacimiento": "2024-12-12",
-      "activo": 1
-    },
-    {
-      "id": "",
-      "nombre": "Cristian ",
-      "correo": "maygo782@gmail.com",
-      "telefono": "6551216",
-      "cedula": "1026551221",
-      "contrasena": "31432",
-      "fecha_nacimiento": "2024-12-12",
-      "activo": 1
-    },
-    {
-      "id": 11,
-      "nombre": "Cristian ",
-      "correo": "omageys@hotmail.com",
-      "telefono": "34234243",
-      "cedula": "1026551221",
-      "contrasena": "124312",
-      "fecha_nacimiento": "2024-12-12",
-      "activo": 0
+      "correo": "lauragomez@gmail.com"
     }
   ]
 }
