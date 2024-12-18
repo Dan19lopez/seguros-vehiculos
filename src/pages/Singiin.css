@@ -182,14 +182,7 @@
 
   /* ubicacion componente ============Start-sotp boton solo se ubica desde este componente==================*/
 
-  .button-container {
-    position: absolute;
-    top: 35px;
-    left: 120px;
-    /* top: 325px;*/
-    /* left: 175px;*/
-
-  }
+  
 
   /*========================================================================================================*/
 
