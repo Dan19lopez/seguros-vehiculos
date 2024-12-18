@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import VehiculosCRUD from "../components/VehiculosCRUD";
+import SegurosCRUD from "../components/SegurosCRUD";
 
 const Home = () => {
 
@@ -60,7 +61,10 @@ const handleClick =()=>{
           </div>
         </div>
       </section>
-    
+
+
+    <SegurosCRUD/>
+      <hr />
     <VehiculosCRUD/>
 
 
