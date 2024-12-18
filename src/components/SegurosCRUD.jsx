@@ -96,7 +96,7 @@ const SegurosCRUD = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch (`http://localhost:8080/api/vehiculo/${formData.id}`,{
+      const response = await fetch (`http://localhost:8080/api/usuario/${formData.id}`,{
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const SegurosCRUD = () => {
   
   const handleConfirmDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/vehiculo/${id}`, {
+      const response = await fetch(`http://localhost:8080/api/usuario/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -149,7 +149,7 @@ const SegurosCRUD = () => {
   const [usuarioById,setUsuarioById]=useState([]);
   const handleSearch = async(id) => {
 
-    const respuesta = await fetch (`http://localhost:8080/api/vehiculo/${id}`)
+    const respuesta = await fetch (`http://localhost:8080/api/usuario/${id}`)
     const respuestaConvertida=respuesta.json();
     if (respuesta.ok) {
       setUsuarioById(respuestaConvertida);
@@ -168,6 +168,8 @@ const SegurosCRUD = () => {
           placeholder="Nombre"
           value={formData.nombre}
           onChange={handleChange}
+          maxLength= "50"
+          minLength= "1"
           required
         />
         <input
@@ -176,6 +178,8 @@ const SegurosCRUD = () => {
           placeholder="Correo"
           value={formData.correo}
           onChange={handleChange}
+          maxLength= "50"
+          minLength= "15"
           required
         />
         <input
@@ -184,6 +188,8 @@ const SegurosCRUD = () => {
           placeholder="Teléfono"
           value={formData.telefono}
           onChange={handleChange}
+          maxLength= "20"
+          minLength= "7"
           required
         />
         <input
@@ -192,6 +198,8 @@ const SegurosCRUD = () => {
           placeholder="Cédula"
           value={formData.cedula}
           onChange={handleChange}
+          maxLength= "50"
+          minLength= "5"
           required
         />
         <input
@@ -200,6 +208,8 @@ const SegurosCRUD = () => {
           placeholder="Contraseña"
           value={formData.contrasena}
           onChange={handleChange}
+          maxLength= "20"
+          minLength= "1"
           required
         />
         <input
@@ -214,8 +224,7 @@ const SegurosCRUD = () => {
           <input
             type="checkbox"
             name="activo"
-            checked={formData.activo === 1}
-            onChange={handleChange}
+            
           />
         </label>
         <button type="submit">{isEditing ? "Actualizar" : "Agregar"}</button>
@@ -244,7 +253,7 @@ const SegurosCRUD = () => {
               <td>{usuario.cedula}</td>
               <td>{usuario.contrasena}</td>
               <td>{usuario.fecha_nacimiento}</td>
-              <td>{usuario.activo === 1 ? "Sí" : "No"}</td>
+              <td>{usuario.activo === true ? "Sí" : "No"}</td>
               <td>
                 <button onClick={() => handleEdit(usuario)}>Editar</button>
                 <button onClick={() => handleDelete(usuario)}>Eliminar</button>

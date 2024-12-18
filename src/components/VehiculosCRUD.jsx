@@ -182,24 +182,32 @@ const VehiculosCRUD = () => {
           type="number"
           name="cilindraje"
           placeholder="Cilindraje"
+          maxLength = "4"
+          minLength = "3"
           required
         />
         <input
           type="text"
           name="color"
           placeholder="Color"
+          maxLength = "20"
+          minLength = "1"
           required
         />
         <input
           type="text"
           name="marca"
           placeholder="Marca"
+          maxLength = "20"
+          minLength = "1"
           required
         />
         <input
           type="text"
           name="modelo"
           placeholder="Modelo"
+          maxLength = "4"
+          minLength = "4"
           required
         />
         <input
@@ -207,16 +215,21 @@ const VehiculosCRUD = () => {
           name="siniestros"
           placeholder="Siniestros"
           required
+          
         />
         <input
           type="text"
           name="placa"
           placeholder="Placa"
+          maxLength = "10"
+          minLength = "1"
           required
         />
         <textarea
           name="descripcion"
           placeholder="Descripción"
+          maxLength = "255"
+          minLength = "1"
           required
         />
         {/* <input
