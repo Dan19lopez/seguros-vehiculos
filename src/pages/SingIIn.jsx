@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BotonCerrar from "../components/BotonCerrar";
 import FormularioDos from "../components/FormularioDos";
 import SingIn from "../components/SingIn";
@@ -55,6 +55,10 @@ function SingIIn() {
       console.error("Error en la solicitud:", error);
       alert("Ocurrió un error al enviar los datos");
     }
+
+    useEffect (() => {
+      handleSubmit ();
+    }, []);
 
   } /* final de funcion asincronica*/
 
