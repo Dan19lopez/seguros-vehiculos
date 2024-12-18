@@ -855,25 +855,24 @@
    /* outline: 1px solid red;*/
   }
 
- .formDos {
-  width: 150%;
-  max-width: 450px;
-  height: 199%;
-  position: relative;
-  top: 13%;
-  left: 26%;
-  padding-top:19%;
-  padding-right: 5%;
-  margin-top: -21%;
-  margin-left: -15%;
-  border-radius: 5%;
-  /*outline: 1px solid rgb(0, 208, 255);*/
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(25px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
- 
+  .formDos {
+    width: 150%;
+    max-width: 450px;
+    height: 206%;
+    position: relative;
+    top: 9%;
+    left: 29%;
+    padding-top: 5%;
+    padding-right: 5%;
+    margin-top: -21%;
+    margin-left: -15%;
+    border-radius: 5%;
+    /* outline: 1px solid rgb(0, 208, 255); */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .contenidoInputB {
   padding-right: 5%;
@@ -889,11 +888,10 @@
   /* outline: 1px solid rgb(255, 0, 234);*/
 }
 .consola {
-  top: 1%;
+  top: 2%;
   left: 5%;
   border-radius: 9%;
 }
-
 .abajoSingin {
   width: 100%;
   height: 10vh;
@@ -914,14 +912,14 @@
 @media (width: 1024px) and (min-height: 1366px) {
   
  
-   .formDos {
+  .formDos {
     width: 150%;
     max-width: 450px;
-    height: 208%;
+    height: 206%;
     position: relative;
-    top: 5%;
+    top: 9%;
     left: 29%;
-    padding-top: 7%;
+    padding-top: 5%;
     padding-right: 5%;
     margin-top: -21%;
     margin-left: -15%;
@@ -932,7 +930,6 @@
     -webkit-backdrop-filter: blur(25px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
-
 }
  .contenidoInputB {
    padding-right: 5%;
@@ -949,7 +946,7 @@
  }
  .consola {
   top: -19%;
-  left: 5%;
+  left: 7%;
   border-radius: 9%;
 }
  
