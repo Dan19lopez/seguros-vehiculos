@@ -987,13 +987,13 @@
    /* outline: 1px solid rgb(238, 255, 0);*/
   }
 
-.formLogin, .formDos {
+ .formDos {
   width: 150%;
   max-width: 450px;
-  height: 158%;
+  height: 178%;
   position: relative;
-  top: 46%;
-  left: 58%;
+  top: 28%;
+  left: 61%;
   padding-top:19%;
   padding-right: 5%;
   margin-top: -21%;
@@ -1037,7 +1037,7 @@
 .button-container {
   position: absolute;
   top: 35px;
-  left: -20px;
+  left: 115px;
 }
 }
 
