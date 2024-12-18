@@ -1,12 +1,12 @@
 {
   "usuarios": [
     {
-      "contrasena": 1234,
+      "contrasena": "1234",
       "cedula": "1233566214",
       "correo": "miguelherrera@gmail.com"
     },
     {
-      "contrasena": 5678,
+      "contrasena": "5678",
       "cedula": "9876543210",
       "correo": "lauragomez@gmail.com"
     }
