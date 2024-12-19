@@ -29,6 +29,18 @@
       "correo": "asdf@gmail.com",
       "cedula": "71776000",
       "contrasena": "98765"
+    },
+    {
+      "id": "cd79",
+      "correo": "pepito@gmail.com",
+      "cedula": "987654321",
+      "contrasena": "pepilover123"
+    },
+    {
+      "id": "ee78",
+      "correo": "paola@gmail.com",
+      "cedula": "123456",
+      "contrasena": "12345678"
     }
   ]
 }
