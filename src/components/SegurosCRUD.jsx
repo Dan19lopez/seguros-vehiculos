@@ -242,7 +242,7 @@ const SegurosCRUD = () => {
       </div>
       {isModalOpen && (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
+        <div className="bg-white p-8 rounded shadow-lg w-full max-w-md mt-40 mb-16  max-h-95">
           <h2 className="text-2xl font-bold mb-4">Editar Usuario</h2>
           <form onSubmit={editarUsuario} className="space-y-4">
             <input
@@ -321,7 +321,7 @@ const SegurosCRUD = () => {
             <button type="submit" className="bg-color5 text-color1 px-4 py-2 rounded w-full">
               Guardar
             </button>
-            <button type="button" onClick={closeModal} className="bg-color6 text-color1 px-4 py-2 rounded w-full mt-2">
+            <button type="button" onClick={closeModal} className="bg-gray-500 text-color1 px-4 py-2 rounded w-full mt-2">
               Cancelar
             </button>
           </form>

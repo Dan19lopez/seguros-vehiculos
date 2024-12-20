@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import BuscarPorId from "./BuscarPorId";
 
 const VehiculosCRUD = () => {
@@ -17,14 +17,20 @@ const VehiculosCRUD = () => {
   });
   const [isEditing, setIsEditing] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const [vehicleToDelete, setVehicleToDelete] = useState(null);
   const [vehiculoById, setVehiculoById] = useState([]);
 
   useEffect(() => {
-    const fetchVehiculos = async () => {
-      const response = await fetch("http://localhost:8080/api/vehiculo");
-      const data = await response.json();
-      setVehiculos(data);
+      const fetchVehiculos = async () => {
+        try{
+        const response = await fetch("http://localhost:8080/api/vehiculo");
+        const data = await response.json();
+        setVehiculos(data);
+        console.log(data);
+      } catch (error){
+        console.error("Error al obtener los vehiculos:",error)
+        } 
     };
 
     fetchVehiculos();
@@ -65,13 +71,19 @@ const VehiculosCRUD = () => {
         });
       }
     } catch (error) {
-      console.error("Error adding vehicle:", error);
+      console.error("Error agregando vehiculo:", error);
     }
   };
+
+  //const handleEdit = (vehiculo) => {
+  //  setFormData(vehiculo);
+  //  setIsEditing(true);
+  //};
 
   const handleEdit = (vehiculo) => {
     setFormData(vehiculo);
     setIsEditing(true);
+    setShowEditModal(true);  // Aquí abrimos el modal
   };
 
   const handleUpdate = async (e) => {
@@ -105,7 +117,7 @@ const VehiculosCRUD = () => {
         setIsEditing(false);
       }
     } catch (error) {
-      console.error("Error updating vehicle:", error);
+      console.error("Error actualizando vehiculo:", error);
     }
   };
 
@@ -119,7 +131,7 @@ const VehiculosCRUD = () => {
         setShowModal(false);
       }
     } catch (error) {
-      console.error("Error deleting vehicle:", error);
+      console.error("Error eliminando vehiculo:", error);
     }
   };
 
@@ -138,7 +150,7 @@ const VehiculosCRUD = () => {
 
   return (
     <div className="vehiculos-crud bg-color1 p-8 font-primary min-h-screen flex flex-col lg:flex-row lg:justify-between lg:items-start">
-      <div className="w-full lg:w-1/2 p-4">
+      <div className="w-full lg:w-2/5 p-4">
         <h1 className="text-2xl font-bold text-color7 mb-4 text-center">Gestión de Vehículos</h1>
         <BuscarPorId
           funcionParaEditar={handleEdit}
@@ -249,7 +261,7 @@ const VehiculosCRUD = () => {
           </button>
         </form>
       </div>
-      <div className="w-full lg:w-1/2 p-4 lg:mt-[1.8rem] overflow-x-auto">
+      <div className="w-full lg:w-3/5 p-4 lg:mt-[1.8rem] overflow-x-auto">
         <table className="w-full bg-color1 table-auto text-sm">
           <thead>
             <tr>
@@ -308,7 +320,125 @@ const VehiculosCRUD = () => {
           </div>
         </div>
       )}
+      {showEditModal && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center ">
+    <div className="bg-white p-8 rounded shadow-lg w-full max-w-md mt-40 mb-16  max-h-95 overflow-y-auto ">
+      <h2 className="text-2xl font-bold mb-4">Editar Vehículo</h2>
+      <form onSubmit={handleUpdate} className="space-y-4">
+        <input
+          type="number"
+          name="cilindraje"
+          placeholder="Cilindraje"
+          maxLength="4"
+          minLength="3"
+          required
+          value={formData.cilindraje}
+          onChange={handleChange}
+          className="w-full p-1 border border-color3 rounded"
+        />
+        <input
+          type="text"
+          name="color"
+          placeholder="Color"
+          maxLength="20"
+          minLength="1"
+          required
+          value={formData.color}
+          onChange={handleChange}
+          className="w-full p-1 border border-color3 rounded"
+        />
+        <input
+          type="text"
+          name="marca"
+          placeholder="Marca"
+          maxLength="20"
+          minLength="1"
+          required
+          value={formData.marca}
+          onChange={handleChange}
+          className="w-full p-1 border border-color3 rounded"
+        />
+        <input
+          type="text"
+          name="modelo"
+          placeholder="Modelo"
+          maxLength="4"
+          minLength="4"
+          required
+          value={formData.modelo}
+          onChange={handleChange}
+          className="w-full p-1 border border-color3 rounded"
+        />
+        <input
+          type="number"
+          name="siniestros"
+          placeholder="Siniestros"
+          required
+          value={formData.siniestros}
+          onChange={handleChange}
+          className="w-full p-1 border border-color3 rounded"
+        />
+        <input
+          type="text"
+          name="placa"
+          placeholder="Placa"
+          maxLength="10"
+          minLength="1"
+          required
+          value={formData.placa}
+          onChange={handleChange}
+          className="w-full p-1 border border-color3 rounded"
+        />
+        <textarea
+          name="descripcion"
+          placeholder="Descripción"
+          maxLength="255"
+          minLength="1"
+          required
+          value={formData.descripcion}
+          onChange={handleChange}
+          className="w-full p-1 border border-color3 rounded"
+        />
+        <label className="flex items-center space-x-2">
+          <span>Activo:</span>
+          <input
+            type="checkbox"
+            name="activo"
+            checked={formData.activo}
+            onChange={handleChange}
+            className="form-checkbox h-5 w-5 text-color4"
+          />
+        </label>
+        <label className="flex items-center space-x-2">
+          <span>Póliza:</span>
+          <select
+            name="poliza"
+            value={formData.poliza}
+            onChange={handleChange}
+            className="w-full p-2 border border-color3 rounded"
+          >
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+            <option value="Platinum">Platinum</option>
+          </select>
+        </label>
+        <div className="flex flex-row gap-1">
+        <button type="submit" className="bg-color5 text-color1 px-4 py-2 rounded w-full mt-2">
+          Guardar
+        </button>
+        <button onClick={() => setShowEditModal(false)} className="bg-gray-500 text-white px-4 py-2 rounded w-full mt-2">
+        Cerrar
+      </button>
+        </div>
+
+
+      </form>
+
     </div>
+  </div>
+)}
+    </div>
+
   );
 };
 
